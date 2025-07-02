@@ -1,0 +1,31 @@
+.class-archivepage-title{
+  text-align: center;
+  padding-bottom: 20px;
+}
+ 
+  /* Add some margin and padding to buttons for better appearance */
+  button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  /* Optional: Active state on buttons */
+  button:active {
+    transform: scale(0.98);
+  }
+  
+.No-archive {
+   display: flex;
+   height: 60vh;
+   justify-content: center;
+   align-items: center;
+  }
+  .No-archive p {
+    font-size: 18px; 
+    color: #555555; 
+    font-weight: 500;
+    margin: 0; 
+  }
+
+  

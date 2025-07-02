@@ -1,0 +1,71 @@
+.success-popup .MuiDialog-paper {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 80px;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.success-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  font-size: 16px;
+  color: #666;
+  /* max-width: 300px; */
+  margin-bottom: 20px;
+}
+
+.success-actions {
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.success-button {
+  min-width: 120px;
+  font-weight: bold;
+  justify-content: center !important;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+.success-button:hover{
+    background-color: #3C7FF5;
+    color: white;
+}
+.css-15fu35s-MuiDialogActions-root {
+    
+    -webkit-justify-content: center !important;
+    justify-content: center !important;
+   
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-popup .MuiDialog-paper {
+  animation: fadeInScale 0.3s ease-out;
+}
+

@@ -1,0 +1,560 @@
+:root {
+    --primary-color: #3b82f6;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --background-color: #f9fafb;
+    --card-bg: #ffffff;
+    --text-primary2: #2c3e50;
+    --text-secondary: #34495E;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 4px;
+}
+
+.QuestionwiseRanking-container {
+    /* padding: 1.5rem;
+    background-color: var(--background-color); */
+    /* min-height: 100vh; */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+.QuestionwiseRanking-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border);
+   border: var(--card-border-px);
+    overflow: hidden;
+    max-width: 1200px;
+    margin-top: var(--allindex-margin-top);
+}
+
+.QuestionwiseRanking-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.QuestionwiseRanking-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+}
+
+.QuestionwiseRanking-title h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary2);
+    margin: 0;
+}
+
+.QuestionwiseRanking-title svg {
+    color: var(--primary-color);
+}
+
+.QuestionwiseRanking-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.QuestionwiseRanking-table-container {
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+}
+
+.QuestionwiseRanking-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.QuestionwiseRanking-header-cell {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.QuestionwiseRanking-row:hover {
+    background-color: #f8fafc;
+}
+
+.QuestionwiseRanking-cell {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    min-width: 60px;
+}
+
+.QuestionwiseRanking-question-number {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.QuestionwiseRanking-percentage {
+    font-size: 0.895rem;
+    color: var(--text-secondary);
+}
+
+.QuestionwiseRanking-high-percentage {
+    background-color: rgba(16, 185, 129, 0.15);
+}
+
+.QuestionwiseRanking-medium-percentage {
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+.QuestionwiseRanking-correct-selected {
+    background-color: rgba(16, 185, 129, 0.15);
+    position: relative;
+}
+
+.QuestionwiseRanking-incorrect-selected {
+    background-color: rgba(239, 68, 68, 0.05);
+    position: relative;
+}
+
+.QuestionwiseRanking-indicator {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.QuestionwiseRanking-check {
+    color: var(--success-color);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.QuestionwiseRanking-x {
+    color: var(--danger-color);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.QuestionwiseRanking-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.QuestionwiseRanking-time svg {
+    color: var(--text-muted);
+}
+
+.QuestionwiseRanking-legend {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 2rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.QuestionwiseRanking-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.QuestionwiseRanking-legend-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.QuestionwiseRanking-legend-indicator.correct {
+    color: var(--success-color);
+}
+
+.QuestionwiseRanking-legend-indicator.incorrect {
+    color: var(--danger-color);
+}
+
+.QuestionwiseRanking-legend-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.QuestionwiseRanking-legend-box.high {
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 768px) {
+
+    .QuestionwiseRanking-header,
+    .QuestionwiseRanking-table-container,
+    .QuestionwiseRanking-legend {
+        padding: 1rem;
+    }
+
+    .QuestionwiseRanking-cell {
+        padding: 0.5rem;
+    }
+
+    .QuestionwiseRanking-legend {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Clickable row styles */
+.QuestionwiseRanking-clickable-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.QuestionwiseRanking-clickable-row:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* Modal styles */
+.QuestionwiseRanking-modal-overlay {
+ 
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: var(--modal-overlay-bottom);
+            left: var(--modal-overlay-left);
+            display: var(--modal-overlay-display);
+            align-items: var(--align-items);
+            justify-content: var(--modal-overlay-justify-content);
+            background: var(--modal-overlay-background);
+            overflow-y: var(--modal-overlay-overflow-y);
+            padding-top: var(--modal-overlay-padding-top);
+            z-index: 999;   }
+
+
+.QuestionwiseRanking-modal {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    max-width: 750px;
+    width: 100%;
+    max-height: 80vh;
+    /* Total modal height */
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.QuestionwiseRanking-modal-header {
+
+    display: var(--modal-header-display);
+    justify-content: var(--modal-header-justify-content);
+    align-items: var(--modal-header-align-items);
+    padding: var(--modal-header-padding);
+    border-bottom: var(--modal-header-border-bottom);
+}
+
+
+.QuestionwiseRanking-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.QuestionwiseRanking-modal-title h3 {
+
+    margin: var(--modal-header-title-margin);
+    font-size: var(--modal-header-title-font-size);
+    font-weight: var(--modal-header-title-font-weight);
+    color: var(--modal-header-title-color);
+}
+
+
+.QuestionwiseRanking-modal-title svg {
+    color: var(--primary-color);
+}
+
+.QuestionwiseRanking-modal-close {
+
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+
+.QuestionwiseRanking-modal-close:hover {
+    /* background-color: #f3f4f6; */
+    color: var(--text-primary);
+}
+
+.QuestionwiseRanking-modal-content {
+    padding: 2rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.QuestionwiseRanking-question-info {
+    margin-bottom: 1.5rem;
+}
+
+.QuestionwiseRanking-question-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.QuestionwiseRanking-subject {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.QuestionwiseRanking-topic {
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.QuestionwiseRanking-difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.QuestionwiseRanking-difficulty.easy {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.QuestionwiseRanking-difficulty.medium {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.QuestionwiseRanking-difficulty.hard {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.QuestionwiseRanking-question-text {
+    margin-bottom: 1.5rem;
+}
+
+.QuestionwiseRanking-question-text h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.QuestionwiseRanking-question-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.QuestionwiseRanking-options-grid {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.QuestionwiseRanking-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.QuestionwiseRanking-option.correct {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: var(--success-color);
+}
+
+.QuestionwiseRanking-option.selected:not(.correct) {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: var(--danger-color);
+}
+
+.QuestionwiseRanking-option-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 1.5rem;
+}
+
+.QuestionwiseRanking-option-text {
+    flex: 1;
+    color: var(--text-secondary);
+}
+
+.QuestionwiseRanking-correct-icon {
+    color: var(--success-color);
+}
+
+.QuestionwiseRanking-incorrect-icon {
+    color: var(--danger-color);
+}
+
+.QuestionwiseRanking-explanation {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8fafc;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.QuestionwiseRanking-explanation h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.QuestionwiseRanking-explanation p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.QuestionwiseRanking-answer-status {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.QuestionwiseRanking-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+}
+
+.QuestionwiseRanking-status.correct {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+}
+
+.QuestionwiseRanking-status.incorrect {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger-color);
+}
+
+.QuestionwiseRanking-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.QuestionwiseRanking-nav-button {
+    padding: var(--load-more2-padding);
+    font-size: var(--load-more-font-size);
+    font-weight: 700;
+    color: var(--load-more-text-color);
+    border: 1px solid;
+    border-radius: 30px;
+    text-align: center;
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+.QuestionwiseRanking-nav-button:hover {
+
+    background-color: var(--button-hover-light-bg);
+    border: var(--button-hover-border);
+}
+
+
+.QuestionwiseRanking-question-counter {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Mobile responsive styles for modal */
+@media (max-width: 768px) {
+    .QuestionwiseRanking-modal-overlay {
+        padding: 0.5rem;
+    }
+
+    .QuestionwiseRanking-modal {
+        max-height: 95vh;
+    }
+
+    .QuestionwiseRanking-modal-header,
+    .QuestionwiseRanking-modal-content,
+    .QuestionwiseRanking-modal-footer {
+        padding: 1rem;
+    }
+
+    .QuestionwiseRanking-question-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .QuestionwiseRanking-modal-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .QuestionwiseRanking-nav-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.QuestionwiseRanking-user-time {
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.QuestionwiseRanking-user-time span {
+    font-size: 0.875rem;
+}

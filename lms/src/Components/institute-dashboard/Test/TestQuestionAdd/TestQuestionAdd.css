@@ -1,0 +1,9 @@
+/* Index Container */
+.testquestionadd-index-container{
+  margin-top: var(--allindex-margin-top);
+  background-color: var(--index-container-bg);
+  border-radius: var(--index-container-border-radius);
+  box-shadow: var(--index-container-box-shadow);
+  padding: var(--index-container-padding);
+  position: relative;
+}

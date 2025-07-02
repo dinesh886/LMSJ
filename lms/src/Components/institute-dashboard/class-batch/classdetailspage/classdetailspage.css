@@ -1,0 +1,332 @@
+.side-menu {
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  color: #151515;
+  padding: 20px;
+  top: 70px;
+  position: fixed;
+  z-index: 11;
+  overflow-y: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: all 0.2s ease-out;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+    margin: 0;
+  font-size: 1.2rem;
+  color: #037DE2
+}
+
+.menu-header h2 {
+  font-size: 17px;
+  margin-left: 10px;
+  font-weight: 600;
+  margin: 0 auto;
+}
+
+.menu-section {
+  margin-bottom: 30px;
+}
+
+.menu-section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #bdc3c7;
+  padding: 0 20px 10px;
+  border-bottom: 1px solid #34495e;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #34495E;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.menu-item:hover {
+  background-color: #F2F9FF;
+  color: #037DE2;
+}
+
+.menu-item.active {
+  background-color: #F2F9FF;
+  color: #037DE2;
+}
+.menu-icon.active{
+   background-color: #F2F9FF;
+  color: #037DE2;
+}
+.svg-inline--fa.active{
+    background-color: #F2F9FF;
+  color: #037DE2;
+}
+.menu-icon {
+  font-size: 1.2rem;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.menu-text {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.badge {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    width: 60px;
+  }
+
+  .menu-header h2,
+  .menu-section-title,
+  .menu-text {
+    display: none;
+  }
+
+  .menu-item {
+    justify-content: center;
+  }
+
+  .menu-icon {
+    margin-right: 0;
+  }
+
+  .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+
+  /* Main content styles */
+  .classdetailspage-content {
+    margin-left: 220px;
+    padding-top: 120px;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .classdetailspage-container {
+    padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .classdetailspage-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 0.5rem;
+  }
+  
+  .classdetailspage-container h2 {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+  }
+  
+  .classdetailspage-container p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  
+  .classdetailspage-container strong {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  /* Loading state */
+  .classdetailspage-container p:last-child {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .classdetailspage-sidemenu {
+      width: 100%;
+      height: auto;
+      position: static;
+      padding-top: 0;
+    }
+  
+    .classdetailspage-content,
+    .container {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .topbar {
+      left: 0;
+    }
+  }
+  /* Background overlay with blur effect */
+.classdetailpage-addstudent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    backdrop-filter: blur(5px); /* Background blur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Ensures modal is on top */
+  }
+  
+  /* Modal dialog */
+  .classdetailpage-addstudent-dialog {
+    width: 100%;
+    max-width: 500px; /* Modal width */
+    margin: 0 15px;
+  }
+  
+  /* Modal content */
+  .classdetailpage-addstudent-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position:relative;
+    top: 50px;
+  }
+  
+  /* Modal header */
+  .classdetailpage-addstudent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  /* Modal title */
+  .classdetailpage-addstudent-title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  /* Close button */
+  .classdetailpage-addstudent-header .close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  /* Modal body */
+  .classdetailpage-addstudent-body {
+    padding: 20px 0;
+  }
+  
+  /* Modal footer */
+  .classdetailpage-addstudent-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+  }
+  
+  .classdetailpage-addstudent-footer .btn {
+    margin-left: 10px;
+  }
+  .class-details{
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+  .Add-Student{
+    width: 150px;
+    height: 50px;
+  }
+  .Add-close{
+    width: 100px;
+    height: 50px;
+  }
+
+    /* Container for the switch and label */
+    .status-toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    /* Toggle switch wrapper */
+    .status-toggle {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+  
+    .status-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  
+    /* Slider (toggle button) */
+    .status-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 20px;
+    }
+  
+    .status-slider:before {
+      content: "";
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  
+    /* ✅ Active State */
+    .status-toggle input:checked+.status-slider {
+      background-color: #28a745;
+      /* Green for Active */
+    }
+  
+    .status-toggle input:checked+.status-slider:before {
+      transform: translateX(20px);
+    }
+        .action-button-group {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          /* space between buttons */
+        }

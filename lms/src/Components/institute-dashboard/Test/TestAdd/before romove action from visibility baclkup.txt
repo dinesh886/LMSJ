@@ -1,0 +1,472 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { useParams, useNavigate, useLocation } from "react-router-dom"
+import { FaEdit, FaCopy, FaTrashAlt, FaArrowRight } from "react-icons/fa"
+import Modal from "react-modal"
+import "./TestAdd.css"
+import DataTable from "../../../ReusableComponents/TableComponent/TableComponent"
+import PaginationButtons from "../../../ReusableComponents/Pagination/PaginationButton"
+import PaginationInfo from "../../../ReusableComponents/Pagination/PaginationInfo"
+import ColumnVisibilityDropdown from "../../../ReusableComponents/ColumnVisibilityDropdown/ColumnVisibilityDropdown"
+import Header from "../../../header/header"
+
+const TestAdd = () => {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const testName = location.state?.testName || "Unknown Test"
+  const INITIAL_ROWS_PER_PAGE = 5
+
+  const data = [
+    {
+      id: 1,
+      question:
+        "What is the primary purpose of React in web development, and how does it contribute to building dynamic and interactive user interfaces?",
+      answer:
+        "React is primarily used for building user interfaces, allowing developers to create reusable UI components and manage the state of applications efficiently.",
+      type: "Mcq",
+      marks: 5,
+      owner: "Admin",
+      options: ["A JavaScript library", "A programming language", "A database", "A framework"],
+      correctAnswer: "A JavaScript library",
+    },
+    {
+      id: 2,
+      question: "What is the result of 5 + 3?",
+      answer: "8",
+      type: "Numerical",
+      marks: 2,
+      owner: "Admin",
+    },
+    {
+      id: 3,
+      question: "Is React a JavaScript library?",
+      answer: "True",
+      type: "True/False",
+      marks: 1,
+      owner: "Admin",
+    },
+    {
+      id: 4,
+      question: "Explain the concept of JSX in React.",
+      answer:
+        "JSX is a syntax extension for JavaScript that looks similar to XML, used to define UI components in React.",
+      type: "Descriptive",
+      marks: 5,
+      owner: "Admin",
+    },
+    {
+      id: 20,
+      question:
+        "What is the primary purpose of React in web development, and how does it contribute to building dynamic and interactive user interfaces?",
+      answer:
+        "React is primarily used for building user interfaces, allowing developers to create reusable UI components and manage the state of applications efficiently.",
+      type: "Mcq",
+      marks: 5,
+      owner: "Admin",
+      options: ["A JavaScript library", "A programming language", "A database", "A framework"],
+      correctAnswer: "A JavaScript library",
+    },
+    {
+      id: 21,
+      question:
+        "What is the primary purpose of React in web development, and how does it contribute to building dynamic and interactive user interfaces?",
+      answer:
+        "React is primarily used for building user interfaces, allowing developers to create reusable UI components and manage the state of applications efficiently.",
+      type: "Mcq",
+      marks: 5,
+      owner: "Admin",
+      options: ["A JavaScript library", "A programming language", "A database", "A framework"],
+      correctAnswer: "A JavaScript library",
+    },
+  ]
+
+  // State declarations
+  const [searchQuery, setSearchQuery] = useState("")
+  const [filterType, setFilterType] = useState("")
+  const [rowsPerPage, setRowsPerPage] = useState(5)
+  const [fullViewMode, setFullViewMode] = useState(false)
+  const [allRowsExpanded, setAllRowsExpanded] = useState(false)
+  const [expandedRows, setExpandedRows] = useState([])
+  const [filteredCount, setFilteredCount] = useState(data.length)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [selectedQuestionIds, setSelectedQuestionIds] = useState([])
+  const [selectedQuestion, setSelectedQuestion] = useState(null)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [isDropdownOpen, setDropdownOpen] = useState(false)
+
+  // Filter data based on search and type
+  const getFilteredData = () => {
+    return data.filter((question) => {
+      const matchesSearch = searchQuery === "" ||
+        question.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        question.answer.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        question.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        question.owner.toLowerCase().includes(searchQuery.toLowerCase())
+
+      const matchesType = filterType === "" || question.type === filterType
+
+      return matchesSearch && matchesType
+    })
+  }
+
+  const filteredData = getFilteredData()
+
+  // Update filtered count when data changes
+  useEffect(() => {
+    setFilteredCount(filteredData.length)
+  }, [filteredData.length])
+
+  // Get current page data
+  const getCurrentPageData = () => {
+    if (fullViewMode) {
+      return filteredData
+    }
+    return filteredData.slice(0, rowsPerPage)
+  }
+
+  // Check if we should show pagination buttons
+  const showPaginationButtons = !fullViewMode && rowsPerPage < filteredData.length
+
+  // Handle search change
+  const handleSearchChange = (value) => {
+    setSearchQuery(value)
+    setCurrentPage(1) // Reset to first page when searching
+  }
+
+  // Handle filter type change
+  const handleFilterTypeChange = (value) => {
+    setFilterType(value)
+    setCurrentPage(1) // Reset to first page when filtering
+  }
+
+  // Handle individual row expansion toggle
+  const toggleRowExpansion = (rowId) => {
+    setExpandedRows((prev) => {
+      if (prev.includes(rowId)) {
+        return prev.filter((id) => id !== rowId)
+      } else {
+        return [...prev, rowId]
+      }
+    })
+  }
+
+  // Pagination functions
+  const loadMore = () => {
+    const newRows = rowsPerPage + 10
+    setRowsPerPage(Math.min(newRows, filteredData.length))
+  }
+
+  const toggleFullView = () => {
+    if (!fullViewMode) {
+      // Enter Full View mode
+      setRowsPerPage(filteredData.length)
+      setAllRowsExpanded(true)
+      setExpandedRows(filteredData.map((q) => q.id))
+    } else {
+      // Exit Full View mode
+      setRowsPerPage(INITIAL_ROWS_PER_PAGE)
+      setAllRowsExpanded(false)
+      setExpandedRows([])
+    }
+    setFullViewMode(!fullViewMode)
+  }
+
+  // Question CRUD operations
+  const handleAddQuestion = () => {
+    console.log("Add question")
+  }
+
+  const handleEditQuestion = (questionId) => {
+    console.log("Edit question", questionId)
+  }
+
+  const handlemoveQuestion = (questionId) => {
+    console.log("move question", questionId)
+  }
+
+  const handleDeleteQuestion = (questionId) => {
+    console.log("Delete question", questionId)
+  }
+
+  const handleCopyQuestion = (questionId) => {
+    console.log("Copy question", questionId)
+  }
+
+  const handleSetMarks = (questionId) => {
+    console.log("Set marks for question", questionId)
+  }
+
+  // Column definitions
+  const [columns, setColumns] = useState([
+    {
+      name: "Questions",
+      selector: "question",
+      cell: (row) => {
+        const isExpanded = expandedRows.includes(row.id)
+        const shouldTruncate = !fullViewMode && !isExpanded
+
+        return (
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation()
+              toggleRowExpansion(row.id)
+            }}
+          >
+            <span className={`row-link ${shouldTruncate ? "truncate" : ""}`}>
+              {row.question}
+            </span>
+          </div>
+        )
+      },
+      isVisible: true,
+    },
+    {
+      name: "Owner",
+      selector: "owner",
+      isVisible: false,
+    },
+    {
+      name: "Type",
+      selector: "type",
+      isVisible: false,
+    },
+    {
+      name: "Marks",
+      selector: "marks",
+      isVisible: false,
+    },
+    {
+      name: "Actions",
+      selector: "actions",
+      isVisible: false,
+      cell: (row) => (
+        <div className="test-action-buttons flex gap-2">
+          <button
+            className="test-action-button copy"
+            aria-label="Copy"
+            onClick={(e) => {
+              e.stopPropagation()
+              handleCopyQuestion(row.id)
+            }}
+          >
+            <FaCopy />
+            <span className="tooltip-text">Copy</span>
+          </button>
+          <button
+            className="test-action-button edit"
+            aria-label="Edit"
+            onClick={(e) => {
+              e.stopPropagation()
+              handleEditQuestion(row.id)
+            }}
+          >
+            <FaEdit />
+            <span className="tooltip-text">Edit</span>
+          </button>
+          <button
+            className="test-action-button delete"
+            aria-label="Delete"
+            onClick={(e) => {
+              e.stopPropagation()
+              handleDeleteQuestion(row.id)
+            }}
+          >
+            <FaTrashAlt />
+            <span className="tooltip-text">Delete</span>
+          </button>
+          <button
+            className="test-action-button add-to-test"
+            aria-label="Move to Test"
+            onClick={(e) => {
+              e.stopPropagation()
+              handlemoveQuestion(row.id)
+            }}
+          >
+            <FaArrowRight />
+            <span className="tooltip-text">Move to Test</span>
+          </button>
+          <button
+            className="test-action-button set-mark"
+            aria-label="Set Mark"
+            onClick={(e) => {
+              e.stopPropagation()
+              handleSetMarks(row.id)
+            }}
+          >
+            <span className="mark-symbol">M</span>
+            <span className="tooltip-text">Set Mark</span>
+          </button>
+        </div>
+      ),
+    },
+  ])
+
+  // Toggle column visibility
+  const toggleColumnVisibility = (columnSelector) => {
+    setColumns((prevColumns) =>
+      prevColumns.map((column) =>
+        column.selector === columnSelector ? { ...column, isVisible: !column.isVisible } : column,
+      ),
+    )
+  }
+
+  // Filter visible columns
+  const visibleColumns = columns.filter((column) => column.isVisible)
+
+  // Click outside handler for dropdowns
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".testadd-column-dropdown")) {
+        setDropdownOpen(false)
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside)
+    return () => {
+      document.removeEventListener("click", handleClickOutside)
+    }
+  }, [])
+
+  // Reset expanded rows when search changes
+  useEffect(() => {
+    if (!fullViewMode) {
+      setExpandedRows([])
+    }
+  }, [searchQuery, filterType])
+
+  return (
+    <>
+      <Header />
+      <div className="testadd-index-wrapper">
+        <div className="testadd-index-container">
+          <div className="">
+            <div className="d-flex justify-content-between w-100">
+              <div>
+                <h3 className="breadcrumb"> Test {id} Questions</h3>
+              </div>
+              <div className="columnvisibility-wrapper">
+                <ColumnVisibilityDropdown columns={columns} onToggleColumn={toggleColumnVisibility} />
+              </div>
+            </div>
+
+            <div className="my-data-table">
+              <DataTable
+                columns={visibleColumns}
+                data={getCurrentPageData()}
+                enableToggle={true}
+                fullViewMode={fullViewMode}
+                allRowsExpanded={allRowsExpanded}
+                expandedRows={expandedRows}
+                setExpandedRows={setExpandedRows}
+                searchoption={true}
+                searchQuery={searchQuery}
+                onSearchChange={handleSearchChange}
+                filterType={filterType}
+                onFilterTypeChange={handleFilterTypeChange}
+              />
+            </div>
+
+          
+          </div>
+        
+          {/* Modal for question details */}
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={() => setModalIsOpen(false)}
+            className="modal-content"
+            overlayClassName="modal-overlay"
+          >
+            {/* Modal content implementation */}
+          </Modal>
+        </div>
+      </div>
+        {/* Pagination Controls */}
+          {showPaginationButtons && (
+            <PaginationButtons
+              filteredQuestions={filteredData}
+              rowsPerPage={rowsPerPage}
+              currentPage={currentPage}
+              loadMore={loadMore}
+              fullView={toggleFullView}
+              fullViewMode={fullViewMode}
+            />
+          )}
+
+          {/* Pagination Info */}
+          <PaginationInfo
+            filteredQuestions={filteredData}
+            rowsPerPage={rowsPerPage}
+            currentPage={currentPage}
+            label="Questions"
+            totalItems={data.length}
+            isSearching={searchQuery.length > 0 || filterType.length > 0}
+          />
+    </>
+  )
+}
+
+export default TestAdd
+
+
+
+
+
+
+column visibility component backup also 
+======================================
+
+import { useState, useRef, useEffect } from "react";
+import "./ColumnVisibilityDropdown.css";
+
+const ColumnVisibilityDropdown = ({ columns, onToggleColumn }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    const toggleDropdown = () => {
+        setIsOpen((prev) => !prev);
+    };
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    return (
+        <div className="columnvisibility-dropdown-container" ref={dropdownRef}>
+            <button className="columnvisibility-dropdown-button load-more-button2" onClick={toggleDropdown}>
+          View
+            </button>
+
+            <div className={`columnvisibility-dropdown-menu ${isOpen ? "show" : ""}`}>
+                {columns.map((column, index) => (
+                    <div key={index} className="columnvisibility-dropdown-item" onClick={() => onToggleColumn(column.selector)}>
+                        <input
+                            type="checkbox"
+                            checked={column.isVisible}
+                            onChange={(e) => {
+                                e.stopPropagation();
+                                onToggleColumn(column.selector);
+                            }}
+                            className="columnvisibility-checkbox"
+                        />
+                        <span>{column.name}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default ColumnVisibilityDropdown;

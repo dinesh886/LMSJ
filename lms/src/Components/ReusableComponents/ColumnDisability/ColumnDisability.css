@@ -1,0 +1,14 @@
+.view-button {
+    padding: 5px 20px !important;
+    font-size: 15px;
+    font-weight: 700;
+    color: #495365;
+    border: 1px solid !important;
+    border-radius: 30px;
+    text-align: center;
+    background-color: white;
+}
+.view-button:hover{
+        background-color: #F2F9FF;
+        border: 1px solid;
+}

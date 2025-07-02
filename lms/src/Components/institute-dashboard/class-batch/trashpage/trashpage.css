@@ -1,0 +1,43 @@
+.class-trashpage{
+  top: 90px;
+}
+.class-trash-heading{
+  text-align: center;
+  padding-bottom: 20px;
+}
+  /* Optional: Hover effect on buttons */
+  /* button:hover {
+    background-color: #f1f1f1;
+    border-color: #ccc;
+  }
+   */
+  /* Add some margin and padding to buttons for better appearance */
+  button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  .trashed-heading{
+    color: #555555;
+    text-align: center;
+  }
+  /* Optional: Active state on buttons */
+  button:active {
+    transform: scale(0.98);
+  }
+  
+.No-trash {
+   display: flex;
+   height: 60vh;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+  }
+  .No-trash p {
+    font-size: 18px; 
+    color: #555555; 
+    font-weight: 500;
+    margin: 0; 
+  }
+
+  

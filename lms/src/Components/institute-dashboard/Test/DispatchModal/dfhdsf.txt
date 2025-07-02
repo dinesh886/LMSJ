@@ -1,0 +1,271 @@
+<Collapse in={showAdvanced} timeout="auto" unmountOnExit>
+{isScheduled && (
+  <>
+    <Grid item xs={12} sm={6}>
+      <DatePicker
+        selected={date}
+        onChange={(date) => setDate(date)}
+        dateFormat="yyyy/MM/dd"
+        placeholderText="Select a date"
+        showMonthDropdown
+        showYearDropdown
+        dropdownMode="select"
+        customInput={<TextField label="Select Date" fullWidth />}
+      />
+    </Grid>
+    <Grid item xs={12} sm={6}>
+      <DatePicker
+        selected={time}
+        onChange={(time) => setTime(time)}
+        showTimeSelect
+        showTimeSelectOnly
+        timeIntervals={15}x
+        timeCaption="Time"
+        dateFormat="h:mm aa"
+        placeholderText="Select a time"
+        customInput={<TextField label="Select Time" fullWidth />}
+      />
+    </Grid>
+    <Grid item xs={12}>
+      <div className="availability-container">
+        {isChecking && (
+          <div className="loader">
+            <div className="spinner"></div>
+            <span>Checking availability...</span>
+          </div>
+        )}
+        {availabilityMessage && (
+          <p className={`availability-message ${availabilityMessage.includes("available") ? "available" : "unavailable"}`}>
+            {availabilityMessage}
+          </p>
+        )}
+      </div>
+     
+    </Grid>
+    {overlappingTest && (
+      <Grid item xs={12}>
+        <div className="warning-box">
+          <h3>Warning: Overlapping Test</h3>
+          <p>Test Name: {overlappingTest.name}</p>
+          <p>Owner: {overlappingTest.owner}</p>
+          <p>Start Time: {overlappingTest.startTime}</p>
+          <p>End Time: {overlappingTest.endTime}</p>
+          <p>Overlapped Classes: {overlappingTest.overlappedClasses.join(", ")}</p>
+        </div>
+      </Grid>
+    )}
+    
+    <Grid item xs={12} sm={6}>
+      <TextField
+        label="Enter Time (Minutes)"
+        type="number"
+        fullWidth
+        value={duration}
+        onChange={(e) => setDuration(e.target.value)}
+        margin="normal"
+      />
+    </Grid>
+    <Grid item xs={12} sm={6}>
+      <FormControl fullWidth margin="normal">
+        <InputLabel>Test Entry Type</InputLabel>
+        <Select
+          value={entryType}
+          onChange={(e) => setEntryType(e.target.value)}
+        >
+          <MenuItem value="sharp-time">Sharp Time</MenuItem>
+          <MenuItem value="sharp-time-allowed">Sharp Time But Can Be Allowed</MenuItem>
+          <MenuItem value="by-organizer">By Test Organizer</MenuItem>
+          <MenuItem value="allow-anytime">Allow Anytime Before Test Finishes</MenuItem>
+        </Select>
+      </FormControl>
+    </Grid>
+    <Grid item xs={12} sm={6}>
+      <FormControl fullWidth margin="normal">
+        <InputLabel>Publish Result</InputLabel>
+        <Select
+          value={publishResult}
+          onChange={(e) => setPublishResult(e.target.value)}
+        >
+          <MenuItem value="immediate">Show Result Immediately</MenuItem>
+          <MenuItem value="after-time">Show After Specified Time</MenuItem>
+          <MenuItem value="manual">Publish Manually</MenuItem>
+        </Select>
+      </FormControl>
+    </Grid>
+    {publishResult === "after-time" && (
+      <Grid item xs={12} sm={6}>
+        <TextField
+          label="Enter Delay Time (Minutes)"
+          type="number"
+          fullWidth
+          value={resultDelay}
+          onChange={(e) => setResultDelay(e.target.value)}
+          margin="normal"
+        />
+      </Grid>
+    )}
+  </>
+)}
+<Grid item xs={12}>
+  <FormControlLabel
+    control={
+      <Checkbox
+        checked={generateLink}
+        onChange={() => setGenerateLink(!generateLink)}
+      />
+    }
+    label="Generate Dispatch Link"
+  />
+</Grid>
+{generateLink && (
+  <Grid item xs={12} sm={6}>
+    <TextField
+      label="Enter Link Limit"
+      type="number"
+      fullWidth
+      value={linkLimit}
+      onChange={(e) => setLinkLimit(e.target.value)}
+      margin="normal"
+    />
+  </Grid>
+)}
+<Grid item xs={12} sm={6}>
+  <TextField
+    label="Only allow first"
+    type="number"
+    fullWidth
+    // value={emailOnly ? "1" : ""}
+    onChange={(e) => setEmailOnly(e.target.value !== "")}
+    margin="normal"
+  />
+</Grid>
+<Grid item xs={12}>
+  <FormControlLabel
+    control={
+      <Checkbox
+        checked={emailThroughEmail}
+        onChange={() => setEmailThroughEmail(!emailThroughEmail)}
+      />
+    }
+    label="Only Allow Verified Email"
+  />
+</Grid>
+<Grid item xs={12} sm={6}>
+  <TextField
+    label="Attempt Limit"
+    type="number"
+    fullWidth
+    value={attemptLimit}
+    onChange={(e) => setAttemptLimit(e.target.value)}
+    margin="normal"
+  />
+</Grid>
+</Collapse>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const handlePublish = async () => {
+    if (!selectedClasses.length) {
+      setWarning("Please select at least one class.");
+      return;
+    }
+    if (isScheduled && (!date || !time)) {
+      setWarning("Please select a date and time for the scheduled event.");
+      return;
+    }
+    setWarning(""); // Clear any previous warning
+    setLoading(true); // Show loading spinner
+    
+    try {
+      // Simulating a publish action (e.g., API call)
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate async operation
+      setLoading(false); // Hide loading spinner
+      setSuccessPopupOpen(true); // Open the success dialog
+    } catch (error) {
+      setLoading(false); // Hide loading spinner in case of error
+      console.error("Publish failed", error);
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Grid item xs={12} sm={6}>
+<TextField
+  label="Enter Time (Minutes)"
+  type="number"
+  fullWidth
+  value={duration}
+  onChange={(e) => setDuration(e.target.value)}
+  margin="normal"
+/>
+</Grid>
+<Grid item xs={12} sm={6}>
+<FormControl fullWidth margin="normal">
+  <InputLabel>Test Entry Type</InputLabel>
+  <Select
+    value={entryType}
+    onChange={(e) => setEntryType(e.target.value)}
+  >
+    <MenuItem value="sharp-time">Sharp Time</MenuItem>
+    <MenuItem value="sharp-time-allowed">
+      Sharp Time But Can Be Allowed
+    </MenuItem>
+    <MenuItem value="by-organizer">By Test Organizer</MenuItem>
+    <MenuItem value="allow-anytime">Allow Anytime Before Test Finishes</MenuItem>
+  </Select>
+</FormControl>
+</Grid>
+<Grid item xs={12} sm={6}>
+<FormControl fullWidth margin="normal">
+  <InputLabel>Publish Result</InputLabel>
+  <Select
+    value={publishResult}
+    onChange={(e) => setPublishResult(e.target.value)}
+  >
+    <MenuItem value="immediate">Show Result Immediately</MenuItem>
+    <MenuItem value="after-time">Show After Specified Time</MenuItem>
+    <MenuItem value="manual">Publish Manually</MenuItem>
+  </Select>
+</FormControl>
+</Grid>
+{publishResult === "after-time" && (
+<Grid item xs={12} sm={6}>
+  <TextField
+    label="Enter Delay Time (Minutes)"
+    type="number"
+    fullWidth
+    value={resultDelay}
+    onChange={(e) => setResultDelay(e.target.value)}
+    margin="normal"
+  />
+</Grid>
+)}

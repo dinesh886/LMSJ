@@ -1,0 +1,281 @@
+.newteacher-modal-content2 {
+    max-width: 600px !important;
+}
+
+/* MCQ Modal Styles */
+
+
+/* Modal overlay */
+.newteacher-modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: var(--modal-overlay-bottom);
+    left: var(--modal-overlay-left);
+    display: var(--modal-overlay-display);
+    align-items: var(--align-items);
+    justify-content: var(--modal-overlay-justify-content);
+    background: var(--modal-overlay-background);
+    overflow-y: var(--modal-overlay-overflow-y);
+    padding-top: var(--modal-overlay-padding-top);
+    z-index: 999;
+}
+
+/* Modal Content */
+.newteacher-modal-content {
+    background-color: var(--modal-content-bg);
+    border-radius: var(--modal-content-border-radius);
+    width: var(--modal-content-width);
+    max-width: var(--modal-content-max-width);
+    max-height: var(--modal-content-max-height);
+    overflow-y: var(--modal-content-overflow-y);
+    box-shadow: var(--modal-content-box-shadow);
+    display: var(--modal-content-display);
+    flex-direction: var(--modal-content-flex-direction);
+    position: var(--modal-content-position);
+    top: var(--modal-content-top);
+    left: var(--modal-content-left);
+    transform: var(--modal-content-transform);
+    animation: var(--modal-content-animation);
+}
+
+/* Bounce Animation - Adjusted for Correct Positioning */
+@keyframes bounceFrontBack {
+    0% {
+        transform: var(--bounce-translateX) var(--bounce-perspective) var(--bounce-translateZ-start);
+    }
+
+    50% {
+        transform: var(--bounce-translateX) var(--bounce-perspective) var(--bounce-translateZ-mid);
+    }
+
+    100% {
+        transform: var(--bounce-translateX) var(--bounce-perspective) var(--bounce-translateZ-start);
+    }
+}
+
+/* Bounce Effect Class */
+.newteacher-modal-content.bounce {
+    animation: bounceFrontBack var(--bounce-duration) var(--bounce-timing);
+}
+
+/* Modal Header */
+.newteacher-modal-header {
+    display: var(--modal-header-display);
+    justify-content: var(--modal-header-justify-content);
+    align-items: var(--modal-header-align-items);
+    padding: var(--modal-header-padding);
+    border-bottom: var(--modal-header-border-bottom);
+}
+
+.newteacher-modal-header h5 {
+    margin: var(--modal-header-title-margin);
+    font-size: var(--modal-header-title-font-size);
+    font-weight: var(--modal-header-title-font-weight);
+    color: var(--modal-header-title-color);
+}
+
+.close-btn {
+    background: var(--modal-close-btn-bg);
+    border: var(--modal-close-btn-border);
+    font-size: var(--modal-close-btn-font-size);
+    cursor: var(--modal-close-btn-cursor);
+    color: var(--modal-close-btn-color);
+    padding: var(--modal-close-btn-padding);
+    line-height: var(--modal-close-btn-line-height);
+}
+
+/* Close Button Hover */
+.close-btn:hover {
+    color: var(--modal-close-btn-hover-color);
+}
+
+/* Modal Body */
+.newteacher-modal-body {
+    padding: var(--modal-body-padding);
+    flex: var(--modal-body-flex);
+    overflow-y: var(--modal-body-overflow-y);
+}
+
+/* Row and Column Layout */
+.mcq-row {
+    display: var(--modal-row-display);
+    flex-wrap: var(--modal-row-flex-wrap);
+    margin: var(--modal-row-margin);
+   
+}
+
+.first-column,
+.secound-column {
+    flex: var(--modal-column-flex);
+    padding: var(--modal-column-padding);
+    flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: calc(50% - 24px);
+}
+
+/* Form Groups */
+.newteacher-form-group {
+    margin-bottom: var(--form-group-margin-bottom);
+}
+
+.newteacher-form-group label {
+    display: var(--form-label-display);
+    margin-bottom: var(--form-label-margin-bottom);
+    font-weight: var(--form-label-font-weight);
+    font-family: var(--form-label-font-family);
+}
+
+/* Input Fields */
+.newteacher-form-control {
+    width: var(--form-control-width);
+    padding: var(--form-control-padding);
+    border: var(--form-control-border);
+    border-radius: var(--form-control-border-radius);
+    font-size: var(--form-control-font-size);
+    transition: var(--form-control-transition);
+}
+
+/* Input Focus */
+.newteacher-form-control:focus {
+    border: var(--form-control-focus-border);
+    outline: var(--form-control-focus-outline);
+    box-shadow: var(--form-control-focus-box-shadow);
+}
+
+/* Margin */
+.mt-2 {
+    margin-top: var(--margin-top-sm);
+}
+
+
+
+
+
+
+/* Buttons */
+.btn {
+    align-items: center;
+    background-color: var(--btn-bg);
+    border: var(--btn-border);
+    border-radius: var(--btn-border-radius);
+    color: var(--btn-text-color);
+    display: flex;
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    justify-content: center;
+    padding: var(--btn-padding);
+    text-align: center;
+    transform: none;
+}
+@media (max-width:768px) {
+    .btn {
+        padding: 5px 10px;
+    }
+}
+.btn:hover {
+    background-color: var(--btn-hover-bg);
+    border: var(--btn-hover-border);
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+/* .btn-primary:hover {
+    background-color: #3a7bc8;
+}
+
+.btn-secondary {
+    background-color: #f5f5f5;
+    color: #333;
+} */
+/* 
+.btn-secondary:hover {
+    background-color: #e5e5e5;
+} */
+
+/* Button Add Answer */
+.btn-add-answer {
+    background-color: var(--btn-add-bg);
+    color: var(--btn-add-color);
+    border: var(--btn-add-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: var(--btn-add-margin-bottom);
+    border-radius: var(--btn-add-border-radius);
+    padding: var(--btn-add-padding);
+}
+
+.btn-add-answer:hover {
+    background-color: var(--btn-add-hover-bg);
+}
+
+.btn-add-answer span {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+/* File Input Button */
+input[type="file"]::file-selector-button {
+    border: var(--file-input-border);
+    border-radius: var(--file-input-border-radius);
+    padding: var(--file-input-padding);
+    cursor: pointer;
+    margin-left: var(--file-input-margin-left);
+}
+
+
+/* Form Group Textarea */
+.newteacher-form-group textarea {
+    max-height: var(--textarea-max-height);
+    height: var(--textarea-height);
+    resize: var(--textarea-resize);
+    transition: var(--textarea-transition);
+}
+
+
+
+
+
+
+/* Modal Footer */
+.newteacher-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--modal-footer-gap);
+    padding: var(--modal-footer-padding);
+    border-top: var(--modal-footer-border-top);
+}
+
+/* Active Create Button Styling */
+.create-btn:not(:disabled) {
+    background-color:var(--button-bg-color);;
+    color: var(--create-btn-color);
+    border: var(--create-btn-border);
+}
+.create-btn:not(:disabled):hover {
+    background-color:#0e6dbd;
+    color: var(--create-btn-color);
+    border: var(--create-btn-border);
+}
+/* Disabled Create Button Styling */
+.create-btn:disabled {
+    cursor: not-allowed;
+    opacity: var(--create-btn-disabled-opacity);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   
+    .newteacher-modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+ 
+}

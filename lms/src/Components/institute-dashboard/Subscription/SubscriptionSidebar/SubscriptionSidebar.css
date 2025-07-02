@@ -1,0 +1,63 @@
+.subscription-sidebar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 250px;
+  border-right: 1px solid #3498DB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+.subscription-sidebar-title {
+    /* background: linear-gradient(90deg, #3b82f6, #4f46e5, #2c18cfc7); */
+    background: #3498DB;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 16px;
+    text-align: center;
+}
+.subscription-sidebar-icon {
+  margin: 20px 0;
+  color: #3f51b5;
+}
+.line{
+     color: #3498DB;
+}
+.subscription-sidebar-text {
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-button {
+  background-color: #3498DB ;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #303f9f;
+}
+
+@media (max-width: 768px) {
+  .subscription-sidebar {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+

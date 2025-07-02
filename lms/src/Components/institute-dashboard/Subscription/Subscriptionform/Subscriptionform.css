@@ -1,0 +1,18 @@
+.customize-title{
+    text-align: center;
+    background-color: #3D7BF4;
+    color: White;
+    font-size: 16px;
+    font-weight: 600 !important;
+}
+.subscription-submit:hover{
+background-color:#3D7BF4;
+color: white;
+}
+.subscription-cancle:hover{
+background-color:rgb(185, 9, 9);
+color: white;
+}
+.subscription-title{
+    color: #fff !important;
+}

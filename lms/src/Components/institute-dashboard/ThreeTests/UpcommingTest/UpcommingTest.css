@@ -1,0 +1,266 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --background-color: #f5f7fa;
+  --text-color: #34495e;
+  --border-color: #bdc3c7;
+  --card-background: #ffffff;
+}
+
+.upcoming-test {
+  background-color: var(--card-background);
+  border-radius: var(--card-border);
+  border: var(--card-border-px);
+  padding: 24px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.upcoming-test p{
+    font-weight: bold;
+    font-size: 20px;
+}
+.test-card2 {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #f5f7fa;
+    margin-top: 22px;
+}
+.upcoming-test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.upcoming-test-header h2 {
+  font-size: 18px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.test-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn.modify {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.action-btn.modify:hover {
+  background-color: #27ae60;
+}
+
+.action-btn.terminate {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.action-btn.terminate:hover {
+  background-color: #c0392b;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.info-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-label {
+  font-weight: bold;
+  margin-right: 8px;
+  color: var(--text-color);
+}
+
+.info-value {
+  color: var(--primary-color);
+}
+
+.timer {
+  text-align: right;
+}
+
+.timer h3 {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.countdown {
+
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.time-unit {
+  display: inline-block;
+  min-width: 40px;
+}
+
+.questions-section {
+  margin-top: 24px;
+}
+
+.toggle-questions {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-questions:hover {
+  background-color: #2980b9;
+}
+
+.questions-details {
+  margin-top: 16px;
+}
+
+.questions-details h3 {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.questions-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.questions-details li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.questions-details li:last-child {
+  border-bottom: none;
+}
+
+.question-type {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.question-count {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .test-header, .test-info {
+    flex-direction: column;
+  }
+
+  .test-actions, .timer {
+    margin-top: 16px;
+  }
+
+  .info-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.burger-menu {
+  position: relative;
+}
+
+.burger-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  width: 120px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.menu-item {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #f4f4f4;
+}
+
+.action-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.action-modal  h3{
+  font-size: 20px;
+}
+.action-modal  p{
+  font-size: 18px;
+  color: #34495E;
+  font-weight: 400;
+}
+.action-btn {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-btn.confirm {
+  background: #28a745;
+  color: #fff;
+}
+
+.action-btn.cancel {
+  background: #dc3545;
+  color: #fff;
+}

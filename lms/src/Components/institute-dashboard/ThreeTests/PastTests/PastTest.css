@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --background-color: #f5f7fa;
+  --text-color: #34495e;
+  --border-color: #ecf0f1;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.past-test {
+  background-color: var(--card-background);
+  border-radius: 12px;
+
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.past-test-card-body{
+background-color: #f5f7fa;
+border: 1px solid #d5d5d5;
+}
+.past-test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d5d5d5;
+}
+.past-test-header p{
+    font-weight: bold;
+    font-size: 20px;
+}
+.past-test-header h2 {
+  font-size: 24px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.test-time {
+  font-size: 14px;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.test-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    background: #f5f7fa;
+    padding: 20px;
+    
+}
+.info-column {
+  flex: 1;
+}
+
+.info-item {
+  margin-bottom: 12px;
+}
+
+.info-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.info-value {
+  display: block;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.test-details {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.test-details h3 {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.details-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    justify-content: space-evenly;
+    /* align-items: baseline; */
+    /* justify-items: start; */
+    flex-wrap: wrap;
+}
+
+.detail-item {
+  background-color: var(--card-background);
+  border-radius: 6px;
+    padding: 5px 20px;
+    
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.detail-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.detail-value {
+  display: block;
+padding-left: 10px;
+      font-size: 14px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .test-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .test-time {
+    margin-top: 8px;
+  }
+
+  .test-info {
+    flex-direction: column;
+  }
+
+  .info-column {
+    margin-bottom: 16px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

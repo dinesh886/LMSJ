@@ -1,0 +1,11 @@
+  /* Index Container */
+  .questionbank-index-container {
+    margin-top: 3.5rem;
+      background-color: var(--index-container-bg);
+      border-radius: var(--card-border);
+      /* box-shadow: var(--index-container-box-shadow); */
+      padding: var(--index-container-padding);
+      position: relative;
+      overflow-x: auto;
+      border: 1px solid #e7e9ee;
+  }

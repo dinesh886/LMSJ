@@ -1,0 +1,73 @@
+/* Container for the entire layout */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.layout-header {
+  background-color: #037DE2;
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+ 
+}
+
+/* Main content area with sidebar */
+.layout-main {
+  display: flex;
+  flex: 1;
+  /* overflow: hidden; */
+}
+
+/* Sidebar base styles (applies to all sidebar variants) */
+/* .test-sidebar-container,
+.test-add-sidebar,
+.test-question-add-sidebar {
+  width: 240px;
+  background-color: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  height: calc(100vh - 60px);
+  position: fixed;
+  overflow-y: auto;
+} */
+
+/* Main content area */
+.layout-content {
+  flex: 1 1;
+  padding: 15px;
+  margin-left: 240px;
+  background-color: #f4f5f6;
+  min-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .layout-main {
+    flex-direction: column;
+  }
+
+  /* .test-sidebar-container,
+  .test-add-sidebar,
+  .test-question-add-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  } */
+
+  .layout-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 992px) {
+  .layout-content {
+    padding: 15px;
+  }
+}

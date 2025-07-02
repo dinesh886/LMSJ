@@ -1,0 +1,33 @@
+.load-more-button2 {
+    padding: var(--load-more2-padding);
+    font-size: var(--load-more-font-size);
+    font-weight: 700;
+    color: var(--load-more-text-color);
+    border: 1px solid;
+    border-radius: 30px;
+    text-align: center;
+    background-color: white;
+}
+.full-view-button {
+    padding: var(--load-more2-padding);
+    font-size: var(--load-more-font-size);
+    font-weight: 700;
+    color: var(--load-more-text-color);
+    border: 1px solid;
+    border-radius: 30px;
+    text-align: center;
+    background-color: var(--load-more-bg-color);
+}
+.load-more-button2,
+.full-view-button {
+    margin: 0 5px;
+    /* Adds spacing between buttons */
+}
+
+.load-more-button:hover,
+.newtest-modal-button:hover,
+.load-more-button2:hover,
+.full-view-button:hover {
+    background-color: var(--button-hover-light-bg);
+    border: var(--button-hover-border);
+}

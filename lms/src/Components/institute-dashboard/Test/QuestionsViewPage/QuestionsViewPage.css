@@ -1,0 +1,231 @@
+/* Basic styling for the page */
+.question-view-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.back-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+/* 
+.error-message {
+    color: red;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 50px;
+} */
+
+/* Styling for the questions list */
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.question-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.question-checkbox input {
+    margin-right: 15px;
+}
+
+.question-details {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.question-actions {
+    display: flex;
+    align-items: center;
+    /* Keep the buttons in a single row */
+    gap: 2px;
+    /* Space between the buttons */
+}
+
+
+
+.question-actions button:focus {
+    outline: none;
+}
+
+/* Styling for the options list (for MCQ) */
+.question-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.question-details p{
+    font-size: var(--para-size);
+    margin-bottom: var(--margin-xx-small);
+}
+
+.question-details li {
+    margin-bottom: 5px;
+    font-size: var(--list-font-size);
+}
+.question-details strong{
+    font-size: var(--strong-text-size);
+}
+.pagination-controls {
+    display: flex;
+   justify-content: center;
+   gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+
+/* Button container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    /* Centers the buttons horizontally */
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    /* Ensures the container takes up the full width */
+}
+
+.question-number {
+    padding-right: 0.5rem;
+    /* 8px */
+    font-weight: bold;
+}
+.bulk-delete-button{
+    border: none;
+    outline: none;
+    background:transparent;
+}
+.checkallbox {
+    margin-left: 21px;
+}
+.check-all-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.first-question-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+
+
+    .checkbox-first-question {
+            /* margin-top: -18px; */
+            /* margin-right: -32px; */
+            /* margin-bottom: 4px; */
+            margin-top: 5px;
+            margin-right: 2px;
+        }
+
+
+ 
+.question-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.question-details {
+    flex-grow: 1;
+    /* Allow question details to take available space */
+}
+/* Common styles for buttons */
+/* .question-actions button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 5px;
+    font-size: var(--icon-size);
+    color:var(--icon-color);
+} */
+.question-actions button:hover{
+    background: transparent;
+}
+
+/* Tooltip styles */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: -17px;
+    /* Position it below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 16px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    pointer-events: none;
+    /* To allow clicking on the icon */
+}
+
+/* Sharp curved effect */
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.question-actions button:hover .tooltip 
+{
+    visibility: visible;
+    opacity: 1;
+  
+}
+
+/* Show tooltip on hover over the icon */
+.delete-icon:hover+.tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* Show tooltip on hover over the button */
+.full-view-tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.question-divider {
+    border: 1px solid #ccc;
+    /* Set a visible border color */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* Add margin for spacing */
+    width: 100%;
+    /* Ensure it spans the full width */
+}
+

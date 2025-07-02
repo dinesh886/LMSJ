@@ -1,0 +1,209 @@
+/* status-container.css */
+.status-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.status-card {
+  background: #ffffff;
+  border-radius: var(--card-border);
+  border: 1px solid #e7e9ee;
+  padding: 24px;
+  /* margin: 20px 0; */
+}
+
+.status-header {
+  margin-bottom: 10px;
+}
+
+.status-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.status-title-head {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.status-title-icon {
+  color: #3b82f6;
+}
+
+.status-subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.status-progress {
+  margin-bottom: 24px;
+}
+
+.dashboard-progress-bar {
+    display: flex;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+
+.progress-segment {
+  height: 100%;
+  transition: width 0.6s ease;
+}
+
+.progress-segment.completed {
+  background: #3498db;
+}
+
+.progress-segment.on-hold {
+  background: #f59e0b;
+}
+
+.progress-segment.remaining {
+  background: #ccc;
+}
+
+.status-metrics {
+  /* display: grid; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+    /* allow wrapping on smaller screens */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  gap: 16px;
+}
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0px 0px 0px;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+
+
+  .metric {
+    width: 100%;
+    justify-content: center;
+    /* center content inside */
+  }
+}
+.metric-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .metric-details {
+  display: flex;
+  flex-direction: column;
+} */
+.metric-details {
+
+
+      display: flex;
+      justify-content: space-between;
+      /* margin-top: 10px; */
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    
+    
+}
+.metric-label {
+  font-size: 16px;
+  color: #000;
+  /* margin-bottom: 2px; */
+}
+
+.metric-value {
+  font-size: 16px;
+  /* font-weight: 600; */
+  color: #000;
+}
+
+/* Color variants */
+.metric-completed .metric-icon {
+  background: #3498db;
+  color: #fff;
+}
+
+.metric-on-hold .metric-icon {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.metric-total .metric-icon {
+  background: #ccc;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .status-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 320px) {
+  .status-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .status-card {
+    padding: 16px;
+  }
+}
+.resetat{
+  font-weight: bold;
+}
+/* .progress-segment-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.dashboardstatustoolip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+ 
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.progress-segment-wrapper:hover .dashboardstatustoolip {
+  visibility: visible;
+  opacity: 1;
+} */
