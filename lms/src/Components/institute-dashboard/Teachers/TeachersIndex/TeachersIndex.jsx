@@ -158,14 +158,18 @@ const TeachersIndex = () => {
           {row.name}
         </Link>
       ),
+        sortFunction: (a, b) => a.test.localeCompare(b.test),
+    width: '25%'
     },
     {
       name: "Teacher Emails",
       selector: "email",
+        width: '20%'
     },
     {
       name: "Added Date",
       selector: "date",
+        width: '20%'
     },
     {
       name: "Status",

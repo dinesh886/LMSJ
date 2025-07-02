@@ -151,16 +151,21 @@ const ClassPage = () => {
           </Link>
         </div>
       ),
+      sortFunction: (a, b) => a.test.localeCompare(b.test),
+    width: '25%'
     },
     {
       name: <div className="cursor-pointer">Strength</div>,
       selector: "strength",
       sortable: true,
+          width: '20%'
+
     },
     {
       name: <div className="cursor-pointer">Maximum Allowed</div>,
       selector: "maximumallowed",
       sortable: true,
+        width: '20%'
     },
     {
       name: <div className="cursor-pointer">Expiry Date</div>,

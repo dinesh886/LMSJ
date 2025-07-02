@@ -251,6 +251,8 @@ const TestIndex = () => {
           </Link>
         </div>
       ),
+       sortFunction: (a, b) => a.test.localeCompare(b.test),
+    width: '25%'
     },
     {
       name: "Owner",
