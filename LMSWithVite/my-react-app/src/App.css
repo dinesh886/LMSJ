@@ -1,0 +1,1369 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Noto Sans", serif;
+}
+
+/* global.css */
+:root {
+    /* Fonts */
+    /* --font-family-sans: 'Inter', sans-serif;
+    --font-family-heading: 'Poppins', sans-serif; */
+    --font-size-small: 15px;
+    --font-size-regular: 16px;
+    --font-size-large: 18px;
+    --font-size-heading: 24px;
+    --strong-text-size: 14px;
+    /* Default dark gray color */
+    /* Font Sizes */
+    --font-size-h1: 32px;
+    --font-size-h2: 28px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-h5: 18px;
+    --font-size-h6: 16px;
+    --font-size-paragraph: 16px;
+    --font-weight-sidebar: 400;
+    --font-weight-table-head: 600;
+    --font-weight-sidebar-head: 500;
+    --font-weight-active: 500;
+    --table-font-weight: 400;
+    /* paragraph styles */
+    --para-size: 15px;
+    /* list styles */
+
+    --list-font-size: 15px;
+
+
+    /* Button Colors */
+    --primary-main-color:#037DE2;
+    --primary-light-color:#f0f7ff;
+    --primary-error-color:#f87171;
+    --button-bg-color: #037DE2;
+    --button-bg-color: #037DE2;
+    --button-text-color: #ffffff;
+    --button-border-color: #007bff;
+    --button-active: #037DE2;
+    /* Button Sizes */
+    --button-font-size: 16px;
+    --button-padding: 10px 20px;
+    --button-border-radius: 4px;
+    --button-width: 172px;
+    --button-height: 37px;
+    --invite-button-padding: 5px 38px;
+
+    /* Button Hover/Focus */
+    --button-hover-text-color: #ffffff;
+    --button-hover-border-color: #0056b3;
+    --button-focus-box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+
+    /* Disabled Button */
+    --button-disabled-bg-color: #c6c6c6;
+    --button-disabled-text-color: #8a8a8a;
+    --button-disabled-border-color: #c6c6c6;
+    /* Line Heights */
+    --line-height-h1: 1.4;
+    --line-height-h2: 1.4;
+    --line-height-h3: 1.4;
+    --line-height-paragraph: 1.6;
+
+    /* Font Families */
+    --font-family-heading: 'Noto Sans',
+        sans-serif;
+    --font-family-paragraph: 'Noto Sans',
+        sans-serif;
+     --font-family:'Noto Sans',
+        sans-serif;
+     --font-weight:400;
+    font-family: 'Noto Sans', sans-serif;
+    /* Other Global Styles */
+    --text-color: #4a4a4a;
+    --heading-color: #2c3e50;
+    /* Colors */
+    --primary-color: #3498db;
+    --primary2-color:#34495E;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --text-color: #4a4a4a;
+    --heading-color: #2c3e50;
+    --background-color: #f8f9fa;
+    --button-bg-color: #037DE2;
+
+
+    --button-text-color: #ffffff;
+
+
+    /* Spacing */
+    --padding-small: 8px;
+    --padding-regular: 16px;
+    --padding-large: 24px;
+--allindex-margin-top:1rem;
+    --margin-small: 8px;
+    --margin-regular: 16px;
+    --margin-large: 24px;
+    /* Margin Variables */
+    --margin-xx-small: 5px;
+    --margin-x-small: 8px;
+    --margin-small: 12px;
+    --margin-regular: 16px;
+    --margin-medium: 20px;
+    --margin-large: 24px;
+    --margin-x-large: 32px;
+    --margin-xx-large: 40px;
+    /* Borders */
+    --border-radius-small: 4px;
+    --border-radius-regular: 8px;
+
+    /* Dropdown Styles */
+    --dropdown-bg-color: #ffffff;
+    --dropdown-border-color: #dddddd;
+    --dropdown-hover-bg-color: #f1f1f1;
+
+
+    /* Breadcrumb Colors */
+    --breadcrumb-text-color: #34495E;
+    --breadcrumb-link-color: var(--primary-main-color);
+    --breadcrumb-link-hover-color: #0056b3;
+    --breadcrumb-separator-color: #6c757d;
+
+    /* Breadcrumb Font */
+
+    --breadcrumb-font-size: 14px;
+    --breadcrumb-font-weight: 400;
+
+    /* Breadcrumb Spacing */
+    --breadcrumb-padding: 8px 16px;
+    --breadcrumb-margin: 16px 0;
+    --breadcrumb-separator-spacing: 0 8px;
+
+    /* Breadcrumb Separator */
+    --breadcrumb-separator: '/';
+    /* Default separator */
+
+    /* Search Bar Colors */
+    --search-bg-color: #ffffff;
+    --search-border-color: #495365;
+    --search-border-hover-color: var(--primary-main-color);
+    --search-text-color: #34495E;
+    --search-placeholder-color: #ccc;
+    --search-border: 1px solid #34495E;
+
+    /* Search Bar Font */
+    --search-font-size: 15px;
+
+
+    /* Search Bar Padding & Border */
+    --search-padding: 0.5rem 9rem 0.5rem 2.5rem;
+    --search-border-radius: 4px;
+
+    /* Search Bar Focus Styles */
+    --search-focus-outline: 2px solid var(--primary-main-color);
+    /* Search Icon Colors */
+    --search-icon-color: #666;
+
+    /* Search Icon Positioning */
+    --search-icon-left: 0.75rem;
+    --search-icon-top: 48%;
+    --search-icon-transform: translateY(-50%);
+
+    /* Sidebar Padding & Margin */
+    --sidebar-content-padding: 5px 12px;
+    --sidebar-content-margin-bottom: 4px;
+
+    /* Sidebar Border Radius */
+    --sidebar-border-radius: 8px;
+
+    /* Sidebar Font */
+    --sidebar-font-size: 16px;
+
+    /* Sidebar Gap & Flex */
+    --sidebar-gap: 2px;
+
+    /* Sidebar Colors */
+    --sidebar-text-color: #34495E;
+
+    /* Sidebar Transition */
+    --sidebar-transition: all 0.3s;
+
+    /* Sidebar Cursor */
+    --sidebar-cursor: pointer;
+
+    /* table icons styles  */
+    --icon-color: var(--primary-main-color);
+    --icon-size: 16px;
+
+    /* Load more Button Padding  styles*/
+    --load-more2-padding: 5px 20px;
+
+    /* Button Font */
+    --load-more-font-size: 15px;
+    --load-more-font-weight: 700;
+
+    /* Button Color */
+    --load-more-text-color: #495365;
+    --load-more-bg-color: white;
+
+    /* Button Border */
+    --load-more-border-color: #495365;
+    --load-more-border-radius: 30px;
+
+    /* Button Alignment */
+    --load-more-text-align: center;
+
+    /* fullview button styles */
+/* table answer toggle styles */
+--answer-font-size:16px;
+--answer-padding-left:25px;
+--answer-color:#777;
+--answer-font-weight:400
+}
+
+button{
+    transform: none !important;
+}
+button:active{
+    transform: none !important;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans',
+        sans-serif !important;
+}
+body {
+    min-height: 100vh;
+    overflow-y: auto !important ;}
+/* hr{
+  color:  #f0f0f0 !important;
+} */
+/* buttons styles */
+ul,
+li
+ {
+    margin: 0;
+    padding: 0 ;
+    list-style: none;
+   
+}
+ol,
+ul {
+    padding: 0 !important;
+}
+a{
+    text-decoration: none;
+        color: inherit;
+}
+.allbuttons {
+    width: calc(100% - 40px);
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--button-bg-color);
+    font-size: var(--button-font-size);
+    color: var(--button-text-color) !important;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.allbuttons:hover {
+    background-color: var(--primary-main-color) !important;
+    color: #fff !important;
+}
+
+.load-more-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 10px; */
+    padding: var(--load-more2-padding);
+    font-size: var(--load-more-font-size);
+    font-weight: 700;
+    color: var(--load-more-text-color);
+    border: 1px solid;
+    border-radius: 30px;
+    text-align: center;
+    background-color: white;
+    transform: none;
+}
+.load-more-button :active{
+    transform: none;
+}
+.newtest-modal-button.create:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+    border: none;
+}
+
+ .newtest-modal-button.create:not(:disabled):hover {
+     background-color: var(--primary-main-color);
+     color: white;
+     cursor: pointer;
+     border: none;
+ }
+
+.newtest-modal-button.create {
+    background-color: var(--button-active);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    border-radius: 50px;
+    padding: 6px 22px;
+}
+
+
+.w-85 {
+    width: 85%;
+}
+
+
+
+
+
+
+/* buttons styles */
+
+/* sidebar letters styles */
+.sidebar-contents {
+    padding: 7px 12px;
+    cursor: pointer;
+    border-radius: 0 !important;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    margin-bottom: 4px;
+    position: relative;
+    width: 100%;
+}
+
+
+/* dropdown test styles */
+.dropdown-letters {
+
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    gap: 10px;
+    font-size: 14px;
+    color: #000000DE;
+    display: flex;
+    align-items: center;
+
+}
+
+/* dropdown styles */
+.dropdown-style {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    z-index: 1000;
+    border-radius: 4px;
+    margin-top: 4px;
+    min-height: auto;
+    height: auto;
+    /* min-height: 158px; */
+    padding : 5px;
+    width: 180px;
+}
+
+/* dropdown items styles */
+.testquestionadd-dropdown-item {
+    background-color: #fff;
+    color: #34495E;
+    /* White background */
+    padding: 8px 12px;
+    /* Spacing around the content */
+    width: 100%;
+    /* Ensures it spans the full dropdown width */
+    text-align: start;
+    /* Aligns text to the left */
+    font-size: 14px;
+    /* Font size */
+    border: none;
+    /* Removes any default borders */
+    cursor: pointer;
+    /* Changes cursor to pointer for interactivity */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    /* Smooth transition for hover effects */
+    border-radius: 4px;
+    /* Adds rounded corners for a polished look */
+}
+
+/* dropdown items styles  End*/
+
+.disabled-button {
+    padding: var(--load-more2-padding);
+    height: var(--button-height);
+    font-size: 15px;
+    font-weight: 700;
+    color: #495365;
+    border: 1px solid;
+    border-radius: 30px;
+    text-align: center;
+    background-color: white;
+}
+
+.dropdown-letters:hover {
+    background-color: #F0F8FF;
+
+}
+
+/* dropdown test styles */
+
+/* Tooltip Styles for Full View Button */
+.full-view-tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* The Tooltip itself */
+.full-view-tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: -35px;
+    /* Adjust the tooltip position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Arrow below the tooltip (sharp curve) */
+.full-view-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Show Tooltip on Hover */
+.full-view-tooltip-container:hover .full-view-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* sidebar titles styles */
+.sidebar-titles {
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+    color: #34495E;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: transform 0.3s ease;
+}
+
+.test-action-button .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 8px;
+    position: absolute;
+    top: -30px;
+    /* Adjust as needed */
+    left: 20%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.test-action-button .tooltip-text::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    /* Adjust the distance from the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #111;
+    /* Arrow color */
+}
+
+.test-action-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* modals background overlay styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* modals background overlay styles */
+
+
+/* Breadcrumb container */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-h4) !important;
+    font-weight: var(--font-weight-table-head) !important;
+    padding: 0.75rem 1rem;
+    color: var(--breadcrumb-text-color);
+    background-color: #f8f9fa;
+    border-radius: 5px;
+
+}
+
+/* Style each breadcrumb item */
+.breadcrumb-item {
+    color: var(--breadcrumb-link-color);
+    text-decoration: none;
+
+    font-size: var(--breadcrumb-font-size);
+    transition: color 0.3s ease;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 640px) {
+    .breadcrumb {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+.breadcrumb-item:hover {
+    color: #0056b3;
+}
+
+/* Style the active breadcrumb */
+.breadcrumb-item.active {
+    color: #6c757d;
+    /* font-weight: 700; */
+}
+
+/* Separator between breadcrumb items */
+.breadcrumb-separator {
+    margin: 0 5px;
+    color: #34495E;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .breadcrumb {
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb-item {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* table search bar styles */
+
+
+.test-search-container {
+    position: relative;
+}
+
+.bulk-action-button,
+.bulk-icon:hover {
+    /* transform: translateY(0px); */
+    background: transparent;
+    border: 0;
+    background-color: transparent !important;
+}
+
+.bulk-action-button:active,
+.bulk-action-button.active {
+    transform: translateY(0px) !important;
+
+
+}
+.close-icon{
+    color: #34495E !important;
+    position: absolute;
+    right: 1.7rem;
+    font-size: 1.3rem !important;
+    cursor: pointer;
+  }
+
+/* .bulk-actions:hover{
+background-color: #e0e0e0 !important;
+} */
+
+/* all modals heading styles */
+
+.all-modal-headings {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-align: left;
+    color: #34495E;
+    padding: 12px 16px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+/* tags dropdown item styles */
+.tag-item {
+    background-color: #fff;
+    color: #34495E;
+    /* padding: 8px 12px; */
+    width: 100%;
+    text-align: start;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 4px;
+}
+
+.close-tag-options {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: #34495E;
+}
+
+.close-tag-options:hover {
+    color: red;
+    background: transparent;
+}
+
+/* .more-options {
+    top: 12%;
+} */
+
+.add-tag-button {
+    background-color: var(--primary-main-color);
+    color: white !important;
+    border: none;
+    /* border-radius: 5px; */
+}
+
+.add-tag-button:hover {
+    background-color: var(--primary-main-color);
+    color: white !important;
+}
+
+
+/* table actionbuttons styles */
+
+.test-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    font-size: 1rem;
+    color: var(--primary-main-color);
+    transition: color 0.3s ease;
+}
+
+.testadd-action-btns button {
+    border: none;
+    background: none;
+    color: var(--icon-color);
+    font-size: var(--icon-size);
+    position: relative;
+    font-weight: bold;
+}
+
+.edit-button,
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    /* Adjust the icon size */
+    color: var(--primary-main-color);
+    /* Default color */
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    color: var(--primary-main-color);
+    /* Green for edit, red for delete on hover */
+}
+
+.delete-button {
+    color: var(--primary-main-color);
+    /* Red color for delete button */
+}
+/* Add this to your TableComponent.css */
+/* Replace your existing checkbox styles with: */
+.col-checkbox {
+    position: relative;
+}
+
+.col-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #677283;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.custom-checkbox-container {
+    position: relative;
+    display: inline-block;
+    padding-top: 4px;
+    
+}
+
+.checkbox-icon {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.col-checkbox input[type="checkbox"]:checked {
+    background-color: var(--primary-main-color);
+}
+
+.col-checkbox input[type="checkbox"]:indeterminate {
+    background-color: var(--primary-main-color);
+}
+
+/* Hide the default icons when using custom ones */
+.col-checkbox input[type="checkbox"]::before {
+    display: none; }
+.dropdown-button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: var(--button-width);
+}
+
+/* Hover Effect for Button */
+.dropdown-button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.dropdown-button:after{
+    display: inline-block;
+    margin: auto 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.test-search-input {
+    padding: var(--search-padding);
+    border-radius: 4px;
+    font-size: var(--search-font-size);
+    border: var(--search-border);
+    color: var(--search-text-color);
+    font-family: "Noto Sans", serif;
+}
+@media (max-width:768px) {
+.test-search-input{
+    width: 100%;
+}
+}
+.test-search-icon {
+    position: absolute;
+    left: var(--search-icon-left);
+    top: var(--search-icon-top);
+    transform: var(--search-icon-transform);
+    color: var(--search-icon-color);
+}
+
+.hgByPU div:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-size-h6);
+    font-weight: var(--table-font-weight);
+
+}
+
+.brudcrump {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+    border: none;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.tag-icon {
+    display: inline-block;
+    transform: rotate(135deg);
+    transition: transform 0.3s ease;
+}
+
+/* Style for the tag button */
+.tag-dropdown-toggle {
+    border: 1px solid #34495E;
+    border-radius: 5px;
+    color: #34495E;
+    height: 16px;
+    padding: 5px;
+    width: 16px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Arrow icon using ::after pseudo-element */
+.tag-dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.test-search-input:focus-visible {
+    outline: none;
+}
+
+.test-search-input:focus {
+    box-shadow: 0 0 0px 3px rgba(3, 125, 226, 0.4);
+    border: 1px solid var(--primary-main-color) !important;
+}
+
+.bulk-actions-container {
+    display: flex;
+    align-items: center;
+    border-radius: 85px;
+    float: right;
+   }
+.sidebar-contents-header{
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 11px;
+    text-transform: uppercase;
+}
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    border: 1px dashed #ddd;
+    background-color: #f8f9fa;
+    margin: 1rem;
+    border-radius: 8px;
+  }
+  
+
+  /* root all modals styles */
+/* modal overlay */
+
+:root {
+    --modal-overlay-align-items: flex-start;
+    --modal-overlay-background: rgba(0, 0, 0, 0.5);
+    --modal-overlay-bottom: 0;
+    --modal-overlay-display: flex;
+    --modal-overlay-justify-content: center;
+    --modal-overlay-left: 0;
+    --modal-overlay-overflow-y: auto;
+    --modal-overlay-padding-top: 20px;
+
+    /* Modal Content Variables */
+        --modal-content-bg: white;
+        --modal-content-border-radius: 4px;
+        --modal-content-width: 90%;
+        --modal-content-max-width: 900px;
+        --modal-content-max-height: 90vh;
+        --modal-content-overflow-y: auto;
+        --modal-content-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        --modal-content-display: flex;
+        --modal-content-flex-direction: column;
+        --modal-content-position: fixed;
+        --modal-content-top: 20px;
+        --modal-content-left: 50%;
+        --modal-content-transform: translateX(-50%);
+        --modal-content-animation: none;
+
+/* Modal Header Variables */
+    --modal-header-display: flex;
+    --modal-header-justify-content: space-between;
+    --modal-header-align-items: center;
+    --modal-header-padding: 16px 24px;
+    --modal-header-border-bottom: 1px solid #e0e0e0;
+
+    /* Modal Header Title */
+    --modal-header-title-margin: 0;
+    --modal-header-title-font-size: 1.25rem;
+    --modal-header-title-font-weight: 600;
+    --modal-header-title-color: #495365;
+
+    /* Close Button */
+    --modal-close-btn-bg: none;
+    --modal-close-btn-border: none;
+    --modal-close-btn-font-size: 1.6rem;
+    --modal-close-btn-cursor: pointer;
+    --modal-close-btn-color: #666;
+    --modal-close-btn-padding: 0;
+    --modal-close-btn-line-height: 1;
+
+/* Close Button Hover */
+    --modal-close-btn-hover-color: #333;
+
+    /* Modal Body */
+    --modal-body-padding: 10px 18px;
+    --modal-body-flex: 1 1;
+    --modal-body-overflow-y: auto;
+
+    /* Row and Column Layout */
+    --modal-row-display: flex;
+    --modal-row-flex-wrap: nowrap;
+    --modal-row-margin: -12px;
+
+    --modal-column-flex: 0 0 calc(50% - 24px);
+    --modal-column-padding: 12px;
+
+    /* Form Groups */
+    --form-group-margin-bottom: 9px;
+
+    /* Labels */
+    --form-label-display: block;
+    --form-label-margin-bottom: 8px;
+    --form-label-font-weight: 500;
+    --form-label-font-family: 'Noto Sans', sans-serif;
+
+    /* Input Fields */
+    --form-control-width: 100%;
+    --form-control-padding: 10px 12px;
+    --form-control-border: 1px solid gray;
+    --form-control-border-radius: 4px;
+    --form-control-font-size: 14px;
+    --form-control-transition: border-color 0.2s;
+
+    /* Input Focus */
+    --form-control-focus-border: 1px solid var(--primary-main-color);
+    --form-control-focus-outline: none;
+    --form-control-focus-box-shadow: 0 0 0 3px #037de266;
+
+
+
+    /* Margin */
+        --margin-top-sm: 8px;
+    
+        /* Switch Container */
+        --switch-container-display: flex;
+        --switch-container-gap: 20px;
+        --switch-container-align: center;
+    
+        /* Switch Wrapper */
+        --switch-wrapper-display: flex;
+        --switch-wrapper-align: center;
+        --switch-wrapper-gap: 10px;
+    
+        /* Switch */
+        --switch-width: 40px;
+        --switch-height: 20px;
+        --switch-slider-bg: #ccc;
+        --switch-slider-transition: 0.4s;
+        --switch-slider-radius: 20px;
+    
+        /* Slider Button */
+        --switch-slider-btn-size: 14px;
+        --switch-slider-btn-left: 3px;
+        --switch-slider-btn-bottom: 3px;
+        --switch-slider-btn-bg: white;
+        --switch-slider-btn-radius: 50%;
+    
+        /* Checked State */
+        --switch-checked-bg: var(--button-bg-color);
+        --switch-checked-translate: 20px;
+    
+        /* Button */
+        --btn-bg: #fff;
+        --btn-border: 1px solid;
+        --btn-border-radius: 30px;
+        --btn-text-color: #495365;
+        --btn-font-size: 15px;
+        --btn-font-weight: 700;
+        --btn-padding: 5px 20px;
+        --btn-hover-bg: #f2f9ff;
+        --btn-hover-border: 1px solid #555;
+    
+        /* Primary Button */
+        --btn-primary-bg: #4a90e2;
+        --btn-primary-text: white;
+
+
+/* Button Add Answer */
+    --btn-add-bg: #f0f7ff;
+    --btn-add-color: var(--primary-main-color);
+    --btn-add-border: 1px dashed var(--primary-main-color)#4a90e2;
+    --btn-add-hover-bg: #e0f0ff;
+    --btn-add-border-radius: 5px;
+    --btn-add-padding: 7px;
+    --btn-add-margin-bottom: 20px;
+
+    /* File Input Button */
+    --file-input-border: 1px dashed gray;
+    --file-input-border-radius: 5px;
+    --file-input-padding: 5px 10px;
+    --file-input-margin-left: 1px;
+
+    /* Preview Section */
+    --preview-bg: #f9f9f9;
+    --preview-border-radius: 8px;
+    --preview-padding: 20px;
+    --preview-min-height: 300px;
+    --preview-border: 1px dashed var(--primary-main-color);
+
+    /* Preview Section Header */
+    --preview-header-font-size: 16px;
+    --preview-header-color: #333;
+    --preview-header-border-bottom: 1px solid #eee;
+    --preview-header-padding-bottom: 8px;
+
+    /* Textarea */
+    --textarea-max-height: 120px;
+    --textarea-height: 46px;
+    --textarea-resize: vertical;
+    --textarea-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    /* Answer Preview */
+    --answer-margin: 8px 0;
+    --answer-padding: 8px;
+    --answer-bg: white;
+    --answer-border-radius: 4px;
+    --answer-border: 1px solid #eee;
+
+    /* Image Preview */
+    --img-preview-max-width: 100%;
+    --img-preview-max-height: 150px;
+    --img-preview-margin-top: 8px;
+    --img-preview-border-radius: 4px;
+    --img-preview-display: block;
+
+    /* Modal Footer */
+    --modal-footer-padding: 16px 24px;
+    --modal-footer-border-top: 1px solid #e0e0e0;
+    --modal-footer-gap: 12px;
+
+    /* Create Button */
+    --create-btn-bg: var(--primary-main-color);
+    --create-btn-hover:#1672bf;
+    --create-btn-color: #fff;
+    --create-btn-border: 1px solid var(--primary-main-color);
+    --create-btn-disabled-opacity: 0.6;
+
+    /* Bounce Animation */
+        --bounce-perspective: perspective(1000px);
+        --bounce-translateX: translateX(-50%);
+        --bounce-translateZ-start: translateZ(0);
+        --bounce-translateZ-mid: translateZ(20px);
+        --bounce-duration: 0.3s;
+        --bounce-timing: ease-in-out;
+
+/* tag input form field style */
+
+        --tag-bg-color: #e9ecef;
+            --tag-text-color: #333;
+            --border-radius: 4px;
+            --font-size: 14px;
+            --remove-color: #888;
+            --remove-hover-color: #ff4d4f;
+            --padding-small: 4px;
+            --padding-medium: 4px 8px;
+            --input-min-width: 120px;
+            --icon-size: 16px;
+            --line-height: 1;
+
+
+
+            /* publish modal settings show and hide styles  */
+            --icon-default-color: var(--primary-main-color);
+                --icon-active-color: gray;
+                --font-weight-bold: 600;
+/* 
+                new class page form link copied style */
+                
+--copy-message-bg: #f0f0f0;
+    --copy-message-text: #333;
+    --copy-message-padding: 6px 10px;
+    --copy-message-radius: 4px;
+    --copy-message-fade-time: 2s;
+
+    /* Color Option Styles */
+        --color-option-size: 28px;
+        --color-option-border-radius: 6px;
+        --color-option-border: 2px solid transparent;
+        --color-option-border-selected: #333;
+        --tick-icon-color: white;
+        --tick-icon-size: 16px;
+
+
+/* Custom Color Picker */
+--custom-color-picker-opacity: 0;
+    --custom-color-picker-position: absolute;
+    --custom-color-picker-width: 100%;
+    --custom-color-picker-height: 100%;
+    --custom-color-picker-cursor: pointer;
+
+    --custom-color-label-font-size: 12px;
+    --custom-color-label-color: #fff;
+    --custom-color-label-position: absolute;
+    --custom-color-label-pointer-events: none;
+
+
+
+
+    /* column visibility styles (view) */
+    --columnvisibility-bg: white;
+        --columnvisibility-border: 1px solid #ddd;
+        --columnvisibility-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        --columnvisibility-radius: 4px;
+        --columnvisibility-padding: 8px;
+        --columnvisibility-min-width: 150px;
+        --columnvisibility-z-index: 1000;
+        --columnvisibility-transition: opacity 0.2s ease-in-out,
+            visibility 0.2s ease-in-out,
+            transform 0.2s ease-in-out;
+        --columnvisibility-hover-bg: #f0f0f0;
+
+/* ----------------------------------
+ all index page table page styles  
+ Index Container Styles 
+------------------------------------------ */
+    --index-container-bg: #FFFFFF;
+    --index-container-text: #495365;
+    --index-container-text: #495365;
+    --index-container-border-radius: 4px;   
+    /* --index-container-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    --index-container-padding: 1rem;
+
+    /* Button & Hover Effects */
+    --index-container-hover-bg: rgba(0, 102, 204, 0.1);
+    --index-container-hover-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+    --index-container-button-text: #1b222c;
+    --index-container-transition: 0.3s ease-in-out;
+
+
+        /* List Styles */
+        --list-padding: 0;
+        --list-margin: 0;
+        --list-margin-bottom: 3px;
+
+        /* Hover Effects */
+        --hover-bg: #f5f7fa;
+
+        /* Tag Options */
+        --tag-padding: 0.25rem 0;
+
+        /* Input Styles */
+        --input-margin-top: 0.5rem;
+        --input-padding: 0.25rem;
+        --input-width: 100%;
+
+        /* Button Styles */
+        --button-padding: 0.25rem;
+        --button-font-size: 1rem;
+        --button-color: #34495E;
+        --button-transition: color 0.3s ease;
+
+        /* Link Styles */
+        --link-color: var(--primary-main-color);
+
+        /* Icon Styles */
+        --icon-font-size: 15px;
+
+        /* Tooltip Styles */
+        --tooltip-bg: #000;
+        --tooltip-color: #fff;
+        --tooltip-padding: 5px 8px;
+        --tooltip-font-size: 12px;
+        --tooltip-border-radius: 5px;
+        --tooltip-opacity: 0;
+        --tooltip-transition: opacity 0.3s;
+    
+       
+                /* Tooltip Styles */
+                --tooltip-visible: visible;
+                --tooltip-opacity: 1;
+                --tooltip-scale: translateX(-50%) scale(1);
+        
+                /* Button Styles */
+                --button-padding: 5px;
+                --button-font-size: var(--icon-size);
+                --button-hover-bg: #d9d9d9;
+                --button-hover-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+                --button-hover-border: 1px solid #555;
+                --button-hover-light-bg: #F2F9FF;
+        
+                /* Modal Styles */
+                --modal-bg: white;
+                --modal-border-radius: 8px;
+                --modal-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                --modal-width: 650px;
+                --modal-max-width: 90%;
+                --modal-scale: scale(0.95);
+                --modal-opacity: 0;
+                --modal-animation: zoomEffect 1s ease-in-out infinite;
+        
+                /* Modal Backdrop */
+                --modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+                --modal-z-index: 999;
+                --modal-padding-top: 20px;
+        
+                /* Tag Dot */
+                --tag-dot-size: 5px;
+                --tag-dot-margin-right: 8px;
+        
+                /* Tag Modal */
+                --tag-modal-gap: 10px;
+                --tag-modal-padding: 12px 16px;
+                --tag-modal-font-size: 14px;
+                --tag-modal-font-weight: 500;
+                --tag-modal-color: #34495E;
+        
+                /* Input Styles */
+                --input-padding: 8px;
+                --input-border: 1px solid #ddd;
+                --input-border-radius: 4px;
+
+
+        /* Color Box */
+        --color-box-size: 30px;
+        --color-box-border-radius: 4px;
+
+        /* Tooltip */
+        --tooltip-bg: #000;
+        --tooltip-color: #fff;
+        --tooltip-font-size: 12px;
+        --tooltip-padding: 5px 8px;
+        --tooltip-border-radius: 5px;
+        --tooltip-opacity: 0;
+        --tooltip-transition: opacity 0.3s;
+
+        /* Checkmark */
+        --checkmark-position: absolute;
+        --checkmark-top: 5px;
+        --checkmark-left: 5px;
+        --checkmark-color: white;
+        --checkmark-font-size: 16px;
+
+        /* Button */
+        --button-done-bg: #4CAF50;
+        --button-done-color: white;
+        --button-done-padding: 8px 16px;
+        --button-done-font-size: 14px;
+        --button-done-border-radius: 4px;
+
+        /* Tag Modal Footer */
+        --tag-modal-footer-gap: 10px;
+        --tag-modal-footer-padding: 12px 16px;
+        --tag-modal-footer-border: 1px solid #ddd;
+
+        /* Create Tag Button */
+        --create-tag-btn-padding: 10px 25px;
+        --create-tag-btn-border: 1px solid #495365;
+        --create-tag-btn-color: #495365;
+        --create-tag-btn-border-radius: 20px;
+        --create-tag-btn-width: 110px;
+        --create-tag-btn-height: 37px;
+        --create-tag-btn-transition: background-color 0.3s ease;
+    
+        
+                    /* Tooltip */
+                    --tooltip-opacity-hover: 1;
+            
+                    /* Sort Icon */
+                    --custom-sort-icon-size: 15px;
+            
+                    /* Add Tag Button */
+                    --add-tag-btn-font-size: 14px;
+                    --add-tag-btn-color: #34495E;
+                    --add-tag-btn-bg-hover: #F4F5F6;
+                    --add-tag-btn-padding-top: 5px;
+            
+                    /* Horizontal Rule */
+                    --hr-tag-margin: 0;
+                
+}
+

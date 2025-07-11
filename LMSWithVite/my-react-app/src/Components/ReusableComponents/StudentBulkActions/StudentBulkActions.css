@@ -1,0 +1,171 @@
+.tube-bulk-actions-container {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+ 
+}
+
+.tube-bulk-actions {
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 30px;
+    /* overflow: hidden; */
+    /* Ensures clean cut between buttons */
+}
+
+/* Each button wrapper */
+.tube-bulk-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Reset all buttons to have no border-radius */
+.tube-action-button {
+    background-color: transparent;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 0;
+    font-size: 14px;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+        /* ✅ Add this */
+        z-index: 1;
+        /* Optional, to help layering */
+}
+
+/* Curve ONLY the left corners of the FIRST button */
+.tube-bulk-button:first-child .tube-action-button {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+/* Curve ONLY the right corners of the LAST button */
+.tube-bulk-button:last-child .tube-action-button {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* Hover state for all buttons */
+.tube-action-button:hover {
+    background-color: #e2e8f0;
+}
+
+.tube-action-button:hover {
+    background-color: #e2e8f0;
+    width: 100%;
+}
+
+/* Tooltip */
+.tube-action-button[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 122%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.tube-action-button[data-tooltip]:hover::before {
+    content: "";
+    position: absolute;
+    bottom: 89%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    z-index: 10;
+}
+
+/* Divider */
+.tube-divider {
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+    /* margin: 0 8px; */
+}
+/* Dropdown Styles */
+/* Add these styles to your existing CSS */
+
+.suspend-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.studentbulk-status-toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    margin-left: 8px;
+}
+
+.studentbulk-status-toggle-track {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #3498db;
+}
+
+
+.studentbulk-status-toggle-thumb {
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.studentbulk-status-toggle.enabled .studentbulk-status-toggle-thumb {
+    left: calc(100% - 22px);
+    background-color: white;
+    color: #3b82f6;
+}
+
+.studentbulk-status-toggle.disabled .studentbulk-status-toggle-thumb {
+    left: 2px;
+    background-color: white;
+    color: #f87171;
+}
+.studentbulk-status-toggle.disabled .studentbulk-status-toggle-track {
+    background-color: #f87171;
+}
+.studentbulk-status-toggle.disabled .status-icon{
+   color: #f87171;
+}
+.status-icon {
+    font-size: 12px;
+}
+.tube-action-button:disabled {
+    /* background-color: #ccc; */
+    /* Gray background */
+    color: #777;
+    /* Dim text */
+    cursor: not-allowed;
+    /* Show disabled cursor */
+    pointer-events: none;
+    /* Prevent interaction */
+    opacity: 0.6;
+    /* Faded look */
+}

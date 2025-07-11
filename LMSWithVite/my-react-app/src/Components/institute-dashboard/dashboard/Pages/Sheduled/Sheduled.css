@@ -1,0 +1,205 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f5f7fa;
+  --text-color: #333;
+  --card-background: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --status-color: #e74c3c;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* .scheduled-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+} */
+.scheduled-container{
+  margin-top: 3.5rem;
+}
+.current-test-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.card-header h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.test-info {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-right: 0.5rem;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.status-writing {
+  /* color: var(--status-color); */
+  /* font-weight: 600; */
+}
+
+.timer-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.timer-section h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.countdown {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.time-unit {
+  display: inline-block;
+  min-width: 45px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.student-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.student-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-table tr:hover {
+  background-color: #f1f3f5;
+}
+
+.expand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.expand-button:hover {
+  background-color: #27ae60;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 0.5rem;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.arrow.down {
+  border-top: 6px solid white;
+}
+
+.arrow.up {
+  border-bottom: 6px solid white;
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timer-section {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .test-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .countdown {
+    font-size: 1.5rem;
+  }
+
+  .time-unit {
+    min-width: 35px;
+  }
+}
+
