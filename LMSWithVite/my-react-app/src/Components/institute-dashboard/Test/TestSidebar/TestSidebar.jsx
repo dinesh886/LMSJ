@@ -201,13 +201,13 @@ const TestSidebar = () => {
                 >
                   <Tag className="icon" size={18} style={{ color: tag.color }} />
                   <div className="w-100 d-flex justify-content-between align-items-center">
-                    <span className="sidebar-letters">{tag.name}</span>
+                    <span className="sidebar-letters">{tag.name} </span>
                     <button
                       className="tag-button"
                       type="button"
                       onClick={(e) => handleTagClick(e, index)}
                     >
-                      <span className="tag-dropdown-toggle"></span>
+                      <span className="tag-dropdown-toggle"> </span>
                     </button>
 
                     <TagActionsDropdown
