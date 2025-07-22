@@ -1,0 +1,319 @@
+
+.test-bulk-actions-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.test-bulk-actions {
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 30px;
+    /* overflow: hidden; */
+}
+.test-bulk-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.test-bulk-button:first-child .test-action-button {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.test-action-button {
+    background-color: transparent;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 0;
+    font-size: 14px;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    color: var(--primary-main-color);
+}
+.test-divider {
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+    /* margin: 0 8px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+.bulk-action-button {
+    position: relative !important;
+    cursor: pointer;
+}
+
+/* Tooltip Text */
+.bulk-action-button[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 183%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    z-index: 10;
+}
+
+/* Tooltip Arrow */
+.bulk-action-button[data-tooltip]:hover::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 9px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+    display: block;
+    z-index: 11;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.bulk-actions {
+    display: flex;
+    width: 100%;
+    /* background: #f5f5f5; */
+    /* Light background to highlight curved effect */
+    border-radius: 20px;
+    /* Ensures rounded corners for the whole group */
+    overflow: visible;
+    /* Prevents child elements from breaking the border-radius */
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid;
+    /* Alternative to overflow: hidden */
+
+}
+
+.separate-bulk-button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    /* Ensure it doesn't take full width */
+
+    border-radius: 6px;
+    /* Use margin instead of padding */
+    transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    position: relative;
+
+}
+
+/* Hover effect covering the full area */
+/* .separate-bulk-button:hover {
+background-color: #F0F8FF ;
+margin: 0 0px;
+max-width: fit-content;
+} */
+
+/* First button: left side curved */
+.separate-bulk-button:first-child:hover,
+.separate-bulk-button:first-child:focus,
+.separate-bulk-button:first-child:active {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+/* Last button: right side curved */
+.separate-bulk-button:last-child:hover,
+.separate-bulk-button:last-child:focus,
+.separate-bulk-button:last-child:active {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+/* Ensure hover effect applies to full button area */
+.bulk-action-button {
+    position: relative;
+    width: 100%;
+    /* Ensures each button takes full space inside its container */
+    /* padding: 10px 15px; */
+    border: none;
+    margin: 4px 10px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hide the last divider when 'More' is not present */
+/* .bulk-actions .separate-bulk-button:last-of-type:not(:has(+ .separate-bulk-button)) .divider {
+    display: none;
+} */
+.divider {
+    width: 1px;
+    min-height: 35px;
+    /* Ensure it has at least some height */
+    height: 100%;
+    /* Make it take full height */
+    background-color: #495365;
+    align-self: stretch;
+    /* Ensures it stretches fully inside a flex container */
+}
+
+.more-button-fix {
+    padding-right: 10px;
+    /* Ensure consistent padding */
+    margin: 0;
+    overflow: hidden !important;
+    z-index: 10;
+    /* Ensures button stays on top */
+    /* Remove unwanted margin */
+}
+.dropdown-toggle2:after {
+    border-bottom: 0;
+    border-left: .3em solid #0000;
+    border-right: .3em solid #0000;
+    border-top: .3em solid;
+    content: "";
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+}
+.dropdown-toggle2:after {
+    left: 2px;
+    position: relative;
+    top: 2px;
+}
+/* List Styles */
+.tag-options ul,
+.more-options ul {
+    list-style-type: none;
+    padding: 0px 8px;
+    margin: var(--list-margin);
+    margin-bottom: var(--list-margin-bottom);
+}
+.addtotag-box-heading{
+    font-size: 14px;
+}
+.more-options ,
+.tag-options-list {
+    padding: 5px 5px !important;
+   
+}
+.more-options .more-options-item {
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.tag-options-item{
+    padding: 6px 0px 6px 14px;
+        font-size: 15px;
+        border-radius: 6px;
+       
+        cursor: pointer;
+}
+.more-options ul li:hover ,
+ .tag-options-item:hover{
+    background-color: var(--hover-bg);
+}
+.tags-create-button{
+    border-top: 1px solid #ddd !important;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--add-tag-btn-color) !important;
+    font-size: var(--add-tag-btn-font-size);
+    text-align: left !important;
+    padding-top: -5px !important;
+    padding: 10px ;
+    
+    width: 100%;
+}
+.tags-create-button:hover{
+    background-color: var(--hover-bg);
+}
+.tag-options,
+.more-options {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 12px 0 rgba(30, 37, 48, .12), 0 2px 4px rgba(30, 37, 48, .08);
+    border-radius: 4px;
+
+    z-index: 500;
+    width: 182px;
+    right: 0;
+    top: 100%;
+}
+.tube-action-button.active{
+    background-color: #e2e8f0;
+}
+.tube-action-button.last-visible:hover,
+.tube-action-button.last-visible.active {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.tag-flipped {
+    transform: scaleX(-1);
+}
+.moreoption{
+    font-weight: 600;
+}
+.selected-count{
+    padding-right: 10px;
+}
+.tag-name {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+    /* Adjust this value as needed */
+}
+.tag-container {
+    display: flex;
+    align-items: center;
+}
+
+.tick-mark {
+    width: 20px;
+    /* fixed width to align tick consistently */
+    text-align: center;
+    font-size: 14px;
+    /* color: green; */
+}
+
+.dot-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tag-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.tag-name {
+    font-size: 14px;
+}

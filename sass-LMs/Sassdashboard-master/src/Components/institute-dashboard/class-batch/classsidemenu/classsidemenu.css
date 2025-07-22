@@ -1,0 +1,306 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --background-color: #ecf0f1;
+  --text-color: #34495e;
+  --border-color: #bdc3c7;
+  --hover-color: #e0e6e9;
+  --active-color: #2980b9;
+  --transition-speed: 0.3s;
+  --font-family: "Noto Sans", serif;
+}
+
+
+.class-side-menu {
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  color: #151515;
+  padding: 20px;
+  top: 70px;
+  position: fixed;
+  z-index: 11;
+  overflow-y: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: all 0.2s ease-out;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.class-side-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px;
+  background: #037DE2;
+
+  border-radius: 4px;
+  color: #fff !important;
+}
+
+.class-sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 auto;
+
+}
+
+.menu-header h2 {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-category {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #bdc3c7;
+  padding: 20px 20px 10px;
+}
+
+
+
+
+
+
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #151515;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.menu-item:hover {
+  background-color: #F2F9FF;
+  color: #037DE2;
+}
+
+.menu-item.active {
+  background-color: #F2F9FF;
+  color: #037DE2;
+}
+
+
+.menu-item:hover {
+  background-color: #F2F9FF;
+}
+
+.menu-item:hover a {
+  color: #037DE2;
+  transform: translateX(5px);
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #037DE2;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover::before {
+  transform: scaleY(1);
+}
+
+.menu-item::after {
+  content: '→';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover::after {
+  opacity: 1 !important;
+  transform: translate(5px, -50%);
+}
+
+.menu-item:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item.active,
+.menu-item.active:hover {
+  background-color: #F2F9FF;
+}
+
+.menu-item.active a,
+.menu-item:hover a {
+  color: #037DE2;
+  transform: translateX(5px);
+}
+
+.menu-item.active::before {
+  transform: scaleY(1);
+}
+
+.menu-item.active::after {
+  content: '→';
+  opacity: 1 !important;
+  transform: translate(5px, -50%);
+}
+
+.menu-item.active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* animation: pulse 1.5s infinite; */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(3, 125, 226, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(3, 125, 226, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(3, 125, 226, 0);
+  }
+}
+
+/* .teachers-sidebar-nav li:hover {
+  animation: pulse 1.5s infinite;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-icon {
+  font-size: 1.2rem;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.management-menu-icon {
+  font-size: 2.5rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+
+.menu-text {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.badge {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.unique-design2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.unique-text2 {
+  font-size: 13px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.menu-item2 {
+  background: #34495E;
+  color: white !important;
+  width: 180px;
+  margin: 0 auto;
+  border-radius: 6px;
+  margin-bottom: 20px !important;
+}
+
+.class-newqbicon {
+  margin-right: 10px;
+}
+
+.menu-item2:hover {
+  background-color: #3498db !important;
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    width: 60px;
+  }
+
+  .menu-header h2,
+  .menu-text {
+    display: none;
+  }
+
+  .menu-item {
+    justify-content: center;
+  }
+
+  .menu-icon {
+    margin-right: 0;
+  }
+
+  .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}

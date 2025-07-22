@@ -1,0 +1,203 @@
+/* Main container styling */
+.add-class-container {
+  /* padding: 3rem 0; */
+  /* max-width: 800px; */
+  margin-top: var(--allindex-margin-top);
+}
+.newclass-form-content{
+  max-width: 550px;
+  border: 1px solid #eee;
+  /* padding: 20px; */
+}
+/* Title styling */
+.addnewclass-title {
+  /* font-size: 1.8rem; */
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #34495E;
+  text-align: left;
+}
+.newclass-form-inner{
+  padding: 20px;
+}
+/* Form styling */
+.add-class-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Form label styling */
+.form-label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+/* Form control styling */
+.form-control {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Radio buttons container */
+.radio-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+.radio-buttons label{
+  cursor: pointer;
+}
+/* Strength students section */
+.strength-students {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.strength-options {
+  display: flex;
+}
+
+.strength-input {
+  width: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Date and time picker styling */
+.date-time-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-date,
+.form-time {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Link container styling */
+.link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.link-input {
+  margin-bottom: 0.5rem;
+}
+.generate-link-button:hover,
+.regenerate-link-button:hover {
+background-color: #f2f9ff;
+color: #34495E;
+}
+       
+/* Button styling */
+.generate-link-button,
+.regenerate-link-button {
+  align-self: flex-start;
+}
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: calc(var(--bs-border-width) * -1);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* border-color: gray; */
+  border: 1px solid #ced4da;
+}
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+ 
+  color: #34495E;
+}
+.regenerate-link-button {
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  margin-top: 1.5rem;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.newclass-footer{
+  display: flex;
+  justify-content: flex-end;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .add-class-container {
+    padding: 2rem 1rem;
+  }
+
+  .add-class-form {
+    padding: 1.5rem;
+  }
+
+  .date-time-container {
+    flex-direction: column;
+  }
+
+  .form-date,
+  .form-time {
+    width: 100%;
+  }
+}
+
+.custom-date-time-picker .MuiPickersPopper-root {
+  position: absolute;
+  z-index: 1300;
+  overflow: visible;
+}
+
+/* Copy button container */
+.copy-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Copy confirmation message */
+.copy-message {
+  position: absolute;
+  top: -40px;
+  left: 92%;
+  transform: translateX(-50%);
+  background-color: var(--copy-message-bg);
+  color: var(--copy-message-text);
+  padding: var(--copy-message-padding);
+  border-radius: var(--copy-message-radius);
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity var(--copy-message-fade-time) ease-in-out;
+}

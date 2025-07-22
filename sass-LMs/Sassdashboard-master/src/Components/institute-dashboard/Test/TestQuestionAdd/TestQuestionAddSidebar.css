@@ -1,0 +1,272 @@
+.testquestionadd-sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto !important;
+      overflow: hidden;
+        /* Hide scrollbar initially */
+        position: relative;
+        /* Required for proper positioning */
+    
+  }
+  
+.testquestionadd-sidebar:hover {
+  overflow-y: auto;
+  /* Show vertical scrollbar only when hovered */
+}
+
+.testquestionadd-sidebar::-webkit-scrollbar {
+  width: 4px;
+  /* Make the scrollbar very thin */
+}
+
+.testquestionadd-sidebar::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  /* Light gray scrollbar */
+  border-radius: 4px;
+  /* Rounded edges */
+}
+
+.testquestionadd-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+  /* Slightly darker gray when hovered */
+}
+
+.testquestionadd-sidebar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Light background for the track */
+  border-radius: 4px;
+  /* Rounded edges for the track */
+}
+  
+  .testquestionadd-sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .testquestionadd-sidebar-button {
+    background-color: transparent; /* Green background */
+    color: #495365;
+    border: none;
+    border: 1px solid #495365;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 85%;
+    text-align: center;
+    border-radius: 50px;
+  }
+    .testquestionadd-sidebaradd-button {
+      background-color: transparent;
+      color: #495365;
+      border: 1px solid #495365;
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 86%;
+      text-align: center;
+      border-radius: 50px;
+    }
+        .testquestionadd-sidebar-button2 {
+        background-color: #037DE2 !important;
+          color: #fff !important;
+         border: none;
+          padding: 10px;
+          font-size: 14px;
+          cursor: pointer;
+          width: 85%;
+          text-align: center;
+          border-radius: 50px;
+        }
+
+  
+  .testquestionadd-dropdown-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content; 
+  }
+  
+  .testquestionadd-dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 12px 0 rgba(30, 37, 48, .12), 0 2px 4px rgba(30, 37, 48, .08);
+    z-index: 1000;
+    border-radius: 4px;
+    margin-top: 4px;
+    min-height: 158px;
+  }
+  
+  .testquestionadd-dropdown-item:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+  }
+
+  .testquestionadd-dropdown-item.active {
+    background-color: #037DE2; /* Highlight the active item in green */
+    color: white;
+  }
+  
+  .testquestionadd-dropdown-submenu {
+    background-color: #f9f9f9;
+    border-left: 2px solid #037DE2; /* Green border to visually indicate the submenu */
+  }
+  
+  .testquestionadd-input-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+.testquestionadd-input-container label {
+  margin-right: 10px;
+  width: 140px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.testquestionadd-input-container input {
+  width: 26%;
+  text-align: center;
+  padding: 1px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+  .testquestionadd-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .testquestionadd-sections-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    z-index: 49;
+    width: 86%;
+  }
+  .testquestionadd-sections-button:hover{
+    background-color: #0050a7;
+    color: #fff;
+  }
+
+ 
+  .testquestionadd-sections-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 49;
+  }
+  
+  .test-add-sidebar-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+   
+
+.bank-item {
+  position: relative;
+}
+
+.testquestionadd-dropdown-item {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.testquestionadd-dropdown-item:hover,
+.testquestionadd-dropdown-item.active {
+  background-color: #f0f0f0;
+}
+
+.sections-dropdown {
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+
+
+.section-item {
+  padding-left: 24px;
+}
+
+.dropdown-icon {
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: #fff;
+}
+.section-dropdown {
+  border: 0;
+  outline: 0;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 50px !important;
+  display: flex;
+  justify-content: center;
+  width: var(--button-width);
+  height: 37px;
+  justify-content: center;
+  align-items: center;
+  color: #34495E;
+  text-align: center;
+}
+.section-dropdown:after{
+  display: inline-block;
+  margin: auto 0;
+  margin-left: .255em;
+  vertical-align: .255em;
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+}
+.testquestionadd-dropdown-item{
+  font-size: 14px;
+    font-weight: 400;
+}
+.dropdown-wrapper{
+  position: relative;
+}
+.counter-box {
+  width: 50px;
+  height: auto;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ddd; /* Blue border */
+  border-radius: 6px;
+  user-select: none;
+  cursor: default;
+}
+
+.dropdown-style .dropdown-item{
+      padding: 6px 6px;
+        border-radius: 6px;
+}
+.dropdown-style .dropdown-item:hover{
+        background-color: var(--hover-bg);
+}

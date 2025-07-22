@@ -1,0 +1,92 @@
+.columnvisibility-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* .columnvisibility-dropdown-button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+} */
+
+.columnvisibility-dropdown-button:hover {
+    background-color: var(--button-hover-light-bg);
+        border: var(--button-hover-border);
+    
+}
+
+.columnvisibility-dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px);
+    background-color: white;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 0;
+    padding: 6px 6px;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+.columnvisibility-dropdown-menu.show {
+    max-height: 300px;
+    opacity: 1;
+    /* overflow-y: auto; */
+    
+}
+
+.columnvisibility-dropdown-item {
+
+            display: flex;
+            align-items: center;
+          
+            width: 100%;
+            padding: 8px 8px;
+         
+            border-radius: 6px;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            color: #374151;
+            transition: background-color 0.2s ease;
+            /* border-bottom: 1px solid #f3f4f6;  */
+          }
+
+
+.columnvisibility-dropdown-item:hover {
+    background-color: #f5f8ff;
+    /* Changes item background */
+    color: #0066cc !important;
+    /* Changes direct text color */
+}
+
+.columnvisibility-dropdown-item:hover span {
+    color: #0066cc !important;
+    /* Ensures the span text changes */
+}
+.columnvisibility-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: #0066cc;
+}
+
+.columnvisibility-dropdown-item span {
+    font-size: 16px;
+color: #34495E;
+}
+
+.columnvisibility-dropdown-button.active {
+    background-color: var(--button-hover-light-bg);
+ }

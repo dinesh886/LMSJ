@@ -1,0 +1,32 @@
+/* StudentLayout.css */
+
+.student-layout {
+    display: flex;
+    height: 100vh;
+    /* Take full viewport height */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.student-content.full-width {
+    margin-left: 0;
+    width: 100%;
+}
+.student-content {
+    margin-left: 250px;
+    /* Same as sidebar width */
+
+    /* overflow-y: auto; */
+    width: calc(100% - 250px);
+    /* Remaining space for content */
+    background-color: #f4f5f7;
+}
+
+@media (max-width:1024px) {
+    .student-content {
+            margin-left: 59px;
+            overflow-y: auto;
+            width: 100%;
+            background-color: #f4f5f7;
+        }
+}

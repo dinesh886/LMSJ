@@ -1,0 +1,57 @@
+
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #6c757d; /* Gray */
+  --hover-color: #0056b3; /* Darker Blue */
+  --background-color: #f8f9fa; /* Light Gray */
+  --card-background-color: #ffffff; /* White */
+  --hover-card-background: #e9ecef; /* Lighter Gray for hover */
+  --text-color: #333333; /* Dark Text */
+  --subtext-color: #6c757d; /* Gray Text */
+  --border-radius: 8px;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-secondary: 'Inter', sans-serif;
+  --font-size-questions:20px;
+  --background:linear-gradient(to right, #3b82f6, #4f46e5, #4f46e5);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #333;
+    padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #e0e0e0;
+}
+
+.pagination button:disabled {
+  background-color: #f9f9f9;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-info {
+  margin-left: 1rem;
+  color: #666;
+}
+

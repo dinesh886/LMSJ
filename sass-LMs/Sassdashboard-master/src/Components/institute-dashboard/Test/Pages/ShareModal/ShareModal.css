@@ -1,0 +1,518 @@
+.share-modal-overlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 999;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.share-modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 700px;
+  max-width: 90%;
+  position: relative;
+  max-height: 500px;
+  overflow: hidden;
+  transform: scale(0.95);
+    opacity: 0;
+    animation: zoomEffect 1s ease-in-out infinite;
+}
+.zoom-in {
+  animation: zoomIn 0.09s ease-in-out forwards;
+}
+
+.zoom-out {
+  animation: zoomOut 0.0s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.01);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.01);
+    opacity: 1;
+  }
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.modal-icon {
+  margin-right: 10px;
+}
+
+.invite-section {
+  gap: 10px;
+  padding: 12px 16px;
+}
+
+.email-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.permission-dropdown select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  float: right;
+  margin-right: 10px;
+}
+
+.link-sharing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.link-sharing-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.status-indicator.on {
+  background-color: #28a745;
+}
+
+.status-indicator.off {
+  background-color: #dc3545;
+}
+
+.status-text {
+  font-size: 14px;
+}
+
+.link-sharing-controls {
+  display: flex;
+  align-items: center;
+}
+
+.link-sharing-toggle {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.link-dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.link-permissions {
+  margin-top: 20px;
+}
+
+.link-section {
+  margin-bottom: 15px;
+}
+
+.link-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.link-url {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.link-icon {
+  margin-right: 5px;
+  color: #007bff;
+}
+
+.link-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.copy-link-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.copy-icon {
+  color: #007bff;
+}
+
+.link-permission-dropdown {
+  position: relative;
+  margin-top: 15px;
+}
+
+.link-permission-dropdown select {
+  width: 100%;
+  padding: 8px 24px 8px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  background-color: white;
+}
+
+.link-permission-dropdown .dropdown-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.shared-members {
+  margin-top: 20px;
+}
+
+.sub-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.member-icon {
+  margin-right: 10px;
+}
+
+.member-email {
+  flex-grow: 1;
+}
+
+.member-role {
+  font-style: italic;
+  color: #666;
+}
+
+.email-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  padding: 7px;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid gray;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  outline: none;
+  border-radius: 5px;
+}
+.email-tags.focused {
+  box-shadow: 0 0 0px 3px rgba(3, 125, 226, 0.4);
+  border: 1px solid #007bff;
+}
+.collaborator{
+  padding: 12px 16px;
+}
+/* Individual email tag */
+.email-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.share-close-button{
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  border-top: 1px solid #ddd;
+}
+/* Remove button for email tag */
+.email-tag button {
+  background: none;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 0.5rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.email-tag button:hover,
+.email-tag button:focus {
+  color: #e53e3e;
+  outline: none;
+}
+
+/* Email input field */
+.email-input {
+  flex: 1 1 auto;
+  min-width: 50px;
+  border: none;
+  outline: none;
+  padding: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background: transparent;
+}
+
+/* Email invite action buttons */
+.email-invite-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: flex-end;
+  padding: 0px 16px;
+}
+.permission-dropdown{
+  float: right;
+}
+.table-container {
+  max-height: 300px; /* Set the desired max height for scrollable area */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  border: 1px solid #ccc;  /* Optional: Add border to the container */
+  padding: 10px;
+    overflow-y: auto
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2px 0;
+  font-size: 16px;
+  text-align: left;
+  display: block;  /* Make the table block-level element */
+  max-height: 100%;  /* Allow the table to fill the container */
+  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  
+}
+
+.members-table th, .members-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.members-table thead {
+  background-color: #f2f2f2;
+}
+
+.members-table tbody {
+  display: block;
+  overflow-y: auto;  /* Enable vertical scrolling for table body */
+  max-height: calc(300px - 40px); /* Adjust height for body */
+}
+
+.members-table th, .members-table td {
+  min-width: 150px; /* Set a minimum width for columns if necessary */
+}
+
+.members-table thead {
+  background-color: #f4f4f4;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.members-table th {
+  padding: 5px;
+  border-bottom: 2px solid #ddd;
+  color: #495365;
+  font-weight: bold;
+}
+
+.members-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+
+.members-table td {
+  padding: 5px;
+  color: #555;
+  font-size: 14px;
+}
+.table-container::-webkit-scrollbar {
+  width: 8px;
+  /* Customize scrollbar width */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  /* Scrollbar thumb color */
+  border-radius: 4px;
+  /* Optional: Rounded edges for scrollbar */
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+  /* Scrollbar track color */
+}
+.members-table select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+      width: fit-content;
+}
+
+.members-table select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.members-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.error-message{
+  color: #dc3545;
+}
+.remove-member-button{
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: #495365;
+}
+.remove-member-button:hover {
+ color: #dc3545;
+}
+.members-container {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  /* border: 1px solid #ddd; */
+  border-radius: 4px;
+}
+.member-item:hover{
+  background-color: #F4F5F6;
+}
+.member-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: var(--icon-color);
+}
+
+.member-email {
+  font-size: 16px;
+  color: #495365;
+}
+
+.member-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dropdown {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+.remove-member-button {
+  background: none;
+  border: none;
+  color: var(--icon-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.remove-member-button:hover {
+  color: #d9363e;
+}
+.error-message-email{
+  font-size: 15px;
+  color: #d9363e;
+}
+.error-message-access{
+  font-size: 15px;
+    color: #d9363e;
+}

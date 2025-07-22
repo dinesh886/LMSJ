@@ -1,0 +1,182 @@
+.navigation-mishap-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%); */
+}
+
+.lost-in-knowledge-space {
+    display: flex;
+    /* max-width: 1200px; */
+    width: 100%;
+    background: white;
+    /* border-radius: 16px; */
+    /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05); */
+    overflow: hidden;
+}
+
+.digital-abyss-content {
+    padding: 4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.disconnected-module-icon {
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+.route-unavailable-heading {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.course-not-found-text {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.dashboard-redirect-suggestion {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.return-to-curriculum-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 250px;
+}
+
+.return-to-curriculum-button:hover {
+    background-color: #3a5bc7;
+    transform: translateY(-2px);
+}
+
+.button-icon {
+    margin-right: 8px;
+}
+
+.knowledge-graph-visual {
+    flex: 1;
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.node {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.node--central {
+    width: 120px;
+    height: 120px;
+}
+
+.node--orbiting {
+    width: 60px;
+    height: 60px;
+    animation: orbit 12s linear infinite;
+}
+
+.node--orbiting:nth-child(2) {
+    top: 30%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.node--orbiting:nth-child(3) {
+    top: 60%;
+    left: 70%;
+    animation-delay: -4s;
+}
+
+.node--orbiting:nth-child(4) {
+    top: 20%;
+    left: 65%;
+    animation-delay: -8s;
+}
+
+.connection {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    transform-origin: left center;
+}
+
+.connection--1 {
+    width: 100px;
+    height: 2px;
+    top: 40%;
+    left: 40%;
+    animation: pulse 3s ease infinite;
+}
+
+.connection--2 {
+    width: 150px;
+    height: 2px;
+    top: 55%;
+    left: 30%;
+    transform: rotate(45deg);
+    animation: pulse 3.5s ease infinite 0.5s;
+}
+
+.connection--3 {
+    width: 120px;
+    height: 2px;
+    top: 30%;
+    left: 50%;
+    transform: rotate(-30deg);
+    animation: pulse 4s ease infinite 1s;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 768px) {
+    .lost-in-knowledge-space {
+        flex-direction: column;
+    }
+
+    .knowledge-graph-visual {
+        height: 300px;
+    } }

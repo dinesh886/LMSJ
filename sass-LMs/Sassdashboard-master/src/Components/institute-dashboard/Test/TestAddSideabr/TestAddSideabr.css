@@ -1,0 +1,350 @@
+:root {
+  --sidebar-bg: #f8fafc;
+  --sidebar-text: #334155;
+  --sidebar-hover: #e2e8f0;
+  --sidebar-active: #3b82f6;
+  --sidebar-button: #037DE2;
+  --sidebar-button-text: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --sidebar-tag: #f1f5f9;
+  --sidebar-item-background: #F2F9FF;
+  --sidebar-item-color: #037DE2;
+}
+
+.test-add-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  color: var(--sidebar-text);
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow-y: auto;
+  /* Hide the scrollbar by default */
+  scrollbar-width: none;
+  /* For Firefox */
+}
+.sidebar-section button:hover{
+background-color: var(--sidebar-item-background);
+  color: var(--sidebar-item-color);
+}
+.test-add-sidebar::-webkit-scrollbar {
+  display: block;
+  /* For Chrome, Safari, and Edge */
+}
+
+.test-add-sidebar:hover::-webkit-scrollbar {
+  display: block;
+  /* For Chrome, Safari, and Edge */
+}
+
+.test-add-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.test-add-sidebar::-webkit-scrollbar-track {
+  background: var(--sidebar-button)
+}
+
+.test-add-sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar-button);
+  border-radius: 3px;
+}
+
+.test-add-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--sidebar-button);
+}
+
+.test-add-sidebar-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--sidebar-button);
+  color: var(--sidebar-button-text);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 24px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  justify-content: center;
+  gap: 8px;
+}
+.test-add-sidebar-button2{
+  background: transparent;
+  border: 1px solid #495365;
+  color: #495365;
+}
+
+.test-add-sidebar-title {
+  font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3498db;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: transform 0.3s ease;
+}
+
+.test-add-sidebar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-contents.active {
+font-size: var(--font-size-regular) !important;
+  font-weight: var(--font-weight-active) !important;
+}
+.sidebar-contents {
+
+
+  padding: var(--sidebar-content-padding);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+  color: var(--sidebar-text-color);
+  display: flex;
+  align-items: center;
+  gap: var(--sidebar-gap);
+  font-size:var(--sidebar-font-size);
+  font-weight: var(--font-weight-sidebar);
+  margin-bottom: 4px;
+  position: relative;
+}
+
+/* .sidebar-letters{
+  font-weight: var(--font-weight-sidebar);
+} */
+.sidebar-contents:hover {
+  background-color: var(--sidebar-item-background);
+  color: var(--sidebar-item-color);
+}
+
+.sidebar-contents.active {
+  background-color: var(--sidebar-item-background);
+  color: var(--sidebar-item-color);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-active);
+}
+
+.sidebar-contents:hover a {
+  color: #037DE2;
+  /* transform: translateX(5px); */
+}
+
+
+.sidebar-contents.active,
+.sidebar-contents.active:hover {
+  background-color: #F2F9FF;
+}
+
+.sidebar-contents.active a,
+.sidebar-contents.active:hover a {
+  color: #037DE2;
+}
+
+/* .sidebar-contents.active::before {
+  transform: scaleY(1);
+} */
+
+.sidebar-contents.active::after {
+  /* content: '→'; */
+  opacity: 1 !important;
+  transform: translate(5px, -50%);
+}
+
+.test-add-sidebar-tag {
+  display: inline-block;
+  background-color: var(--sidebar-tag);
+  padding: 2px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+/* .test-add-sidebar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+} */
+
+.test-add-sidebar-info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* padding: 3px; */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Style for the dropdown content */
+.new-section-dropdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2) ;
+  z-index: 1001;
+  width: 400px;
+}
+
+/* Input and color picker styles */
+.new-section-input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.testadd-predefined-colors {
+  display: flex;
+  gap: 10px;
+  /* Space between color buttons */
+  margin-bottom: 10px;
+}
+
+.color-picker {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Add Section Button Styling */
+.add-section-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.add-section-btn:hover {
+  background-color: #45a049;
+}
+
+/* Close Button Styling */
+.add-section-close-btn {
+  background-color: #f44336;
+  /* Red background for close action */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  /* Full width of the parent container */
+  margin-top: 10px;
+  /* Space between buttons */
+  font-size: 14px;
+  /* Adjust font size */
+  text-align: center;
+  /* Align the text in the center */
+  transition: background-color 0.3s ease;
+  /* Smooth color transition */
+}
+
+.add-section-close-btn:hover {
+  background-color: #e53935;
+  /* Darker red when hovered */
+}
+
+/* Optional: Close button focus state */
+.add-section-close-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.8);
+  /* Add a subtle glow effect when focused */
+}
+
+
+.sidebar-contents {
+    padding: var(--sidebar-content-padding);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    color: var(--sidebar-text-color);
+    display: flex;
+    align-items: center;
+    gap: var(--sidebar-gap);
+    font-size: var(--sidebar-font-size);
+    font-weight: var(--font-weight-sidebar);
+    margin-bottom: 4px;
+    position: relative;
+    width: 100%; /* Ensure the content spans the entire container */
+}
+
+.sidebar-contents::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.sidebar-contents:hover::before {
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust hover background color */
+}
+.snap-chat-btn{
+  /* text-align: cente; */
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+ font-size: 16px;
+ 
+padding: 0 15px;
+    
+  cursor: pointer;
+}
+.test-add-sidebar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* Adjust spacing between rows */
+}
+
+.test-add-sidebar-info-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon-and-key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Space between icon and key */
+  /* flex-grow: 1; */
+  /* Pushes everything else to the left */
+}
+
+.value {
+  text-align: right;
+  
+  /* Ensures alignment */
+}
